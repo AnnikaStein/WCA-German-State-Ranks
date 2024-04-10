@@ -78,7 +78,7 @@ else:
         if not automate:
             with open('../local/events.json', 'w') as f:
                 json.dump(json_data_e, f)
-e_list = [i['id'] for i in json_data_e['items']]
+e_list = [it['id'] for it in json_data_e['items']]
 
 # model state dictionary with singles and averages, for each state, for each event
 state_r = {k : {'single' : {e : [] for e in e_list}, 'average' : {e : [] for e in e_list if e not in info.no_avg}} for k in info.id_state.keys()}
@@ -150,9 +150,9 @@ overview = {'single' : {e : [] for e in e_list}, 'average' : {e : [] for e in e_
 for e in e_list:
     if debug:
         print(e)
-    for i, st in enumerate(state_r.keys()):
+    for it, st in enumerate(state_r.keys()):
         if debug:
-            print('>>', i, st)
+            print('>>', it, st)
             print('>> Doing Singles')
         # checking if something exists for that state
         if len(state_r[st]['single'][e]) > 0:
@@ -611,6 +611,10 @@ def generate_html(variant = 'by-state', choice = 'bw'):
             with footer():
                 attr(style='text-align: center;height:10rem;clear:both;display:block;')
                 br()
+                h4('How to appear in these rankings?')
+                text('Join the GCA Discord Server and read + understand the rules. Append your WCA ID to your username (example: Nickname | 2024ABCD42). Click one of the 16 federal state reaction roles.')
+                br()
+                h4('Data statement')
                 text(f'From {id_count} WCA IDs.')
                 br()
                 text(f'This information is based on competition results owned and maintained by the World Cube Assocation, published at https://worldcubeassociation.org/results as of {updated}.')
@@ -618,6 +622,13 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                 a('© Annika Stein, 2024.',
                   href='https://annikastein.github.io/',
                   target='_blank')
+                br()
+                text('Source code for this project: ')
+                a(i(cls='fab fa-github fa-fw w3-large w3-text-grey'),
+                  href='https://github.com/AnnikaStein/WCA-German-State-Ranks',
+                  target='_blank')
+                br()
+                br()
 
         if variant == 'index':
             script(src='./js/script.js')
