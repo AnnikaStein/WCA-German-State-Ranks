@@ -285,7 +285,7 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                 # give class attribute, don't use python reserved keywords
                 attr(cls = 'container')
                 with div():
-                    attr(style = 'overflow-x:auto;z-index: -1;')
+                    attr(style = 'overflow-x:auto;')
                     with div():
                         attr(cls='butn-con')
                         a('Overview',
@@ -427,7 +427,7 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                                         td(aid[5], style = 'text-align: right;')
                                         td(aid[4], style = 'text-align: right;')
                                         td(aid[7], style = 'text-align: center;')
- 
+
         # main page
         elif variant == 'index':
             with div():
@@ -446,7 +446,7 @@ def generate_html(variant = 'by-state', choice = 'bw'):
             with div():
                 attr(cls = 'container')
                 with div():
-                    attr(style = 'overflow-x:auto;z-index: -1;')
+                    attr(style = 'overflow-x:auto;')
                     with div():
                         attr(cls='butn-con')
                         a('Overview',
@@ -472,7 +472,7 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                     span(cls = 'slider round')
                 br()
                 with div():
-                    attr(style = 'overflow-x:auto;z-index: -1;')
+                    attr(style = 'overflow-x:auto;')
                     with div():
                         attr(cls='btn-con')
                         for ev in e_list:
@@ -512,7 +512,7 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                                                      href=f'https://www.worldcubeassociation.org/persons/{sid[0]}'),
                                                    style='text-align: center;')
                                                 if es not in ['333fm', '333mbf', '333mbo']:
-                                                    td(util.centiseconds_to_human(sid[2]), 
+                                                    td(util.centiseconds_to_human(sid[2]),
                                                     style='text-align: right;')
                                                 elif es == '333mbf':
                                                     td(util.mbf_to_human(sid[2]),
@@ -618,7 +618,7 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                 a('© Annika Stein, 2024.',
                   href='https://annikastein.github.io/',
                   target='_blank')
-            
+
         if variant == 'index':
             script(src='./js/script.js')
         else:
