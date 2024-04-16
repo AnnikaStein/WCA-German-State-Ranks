@@ -95,7 +95,7 @@ id_state = {
     'sn' : ['2024ROPE01',
             '2022HETT02',
             '2022KROK02'],
-    'sna' : [],
+    'sna' : ['2023BART03'],
     'sh' : ['2014MATH02',
             '2023DITT01'],
     'th' : ['2016SCHO08'],
