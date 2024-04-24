@@ -75,6 +75,7 @@ id_state = {
              '2022LIBI01',
              '2023HULS01'],
     'nrw' : ['2016DIET01',
+             '2023GREG02',
              '2017MEYS02',
              '2022HEID03',
              '2014HUTF01',
