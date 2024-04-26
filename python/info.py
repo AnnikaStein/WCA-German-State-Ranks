@@ -19,6 +19,7 @@ id_state = {
             '2023SCHN13',
             '2010KILD02'],
     'bay' : ['2016ROLZ01',
+             '2019ROHR01',
              '2019BROW09',
              '2018DAMK01',
              '2023ALBR03',
