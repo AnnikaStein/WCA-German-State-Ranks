@@ -9,6 +9,7 @@ Variant 1:
 - Join the GCA Discord Server and read + understand the rules.
 - Append your WCA ID to your username (example: Nickname | 2024ABCD42)
 - Click one of the 16 federal state reaction roles.
+
 Variant 2:
 - Fill out the form here: [link to enter the ranks](https://docs.google.com/forms/d/e/1FAIpQLSdoLLgBLfTxZIwKJx9QC5XywuMRBreKU4ElbLTvMEZqxRHFcw/viewform).
 
