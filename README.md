@@ -5,11 +5,14 @@
 Displaying the PRs of people who have given *explicit consent* (opt-in) to appear in German WCA state rankings. Federal state data taken from the GCA Discord Server (reaction roles), PRs taken from the WCA database via the [unofficial API](https://github.com/robiningelbrecht/wca-rest-api).
 
 ## How to appear in these rankings?
+Variant 1:
 - Join the GCA Discord Server and read + understand the rules.
 - Append your WCA ID to your username (example: Nickname | 2024ABCD42)
 - Click one of the 16 federal state reaction roles.
+Variant 2:
+- Fill out the form here: [link to enter the ranks](https://docs.google.com/forms/d/e/1FAIpQLSdoLLgBLfTxZIwKJx9QC5XywuMRBreKU4ElbLTvMEZqxRHFcw/viewform).
 
 ## Data statement
 > This information is based on competition results owned and maintained by the
 > World Cube Assocation, published at https://worldcubeassociation.org/results
-> as of May 07, 2024.
+> as of May 09, 2024.
