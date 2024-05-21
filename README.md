@@ -16,4 +16,4 @@ Variant 2:
 ## Data statement
 > This information is based on competition results owned and maintained by the
 > World Cube Assocation, published at https://worldcubeassociation.org/results
-> as of May 20, 2024.
+> as of May 21, 2024.
