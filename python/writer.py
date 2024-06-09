@@ -242,6 +242,10 @@ Variant 2:
 > This information is based on competition results owned and maintained by the
 > World Cube Assocation, published at https://worldcubeassociation.org/results
 > as of {updated}.
+
+## Support
+Enjoy what you see? Feel free to support my projects here: [at my Cuboss-Affiliate page](https://cuboss.com/affiliate/?affiliate=hugacuba&r=hugacuba) and save 5% off your order! Direct donations can be made to: [your developer](https://www.paypal.com/paypalme/hugacuba).
+
 '''
 
     with open('../README.md', 'w') as f:
@@ -637,6 +641,17 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                 a(i(cls='fab fa-github fa-fw w3-large w3-text-grey'),
                   href='https://github.com/AnnikaStein/WCA-German-State-Ranks',
                   target='_blank')
+                br()
+                br()
+                text('Enjoy what you see? Feel free to support my projects here: ')
+                a('at my Cuboss-Affiliate page',
+                  href ='https://cuboss.com/affiliate/?affiliate=hugacuba&r=hugacuba',
+                  target='_blank')
+                text(' and save 5% off your order! Direct donations can be made to: ')
+                a('your developer',
+                  href ='https://www.paypal.com/paypalme/hugacuba',
+                  target='_blank')
+                text('.')
                 br()
                 br()
 
