@@ -30,6 +30,7 @@ function recalcVisibility() {
         toShow[i].style.display = 'block';
     }
 }
+
 function recalcVisibilityPerS(forceSin = false) {
     if (forceSin == true) {
         // manually toggle the sin-avg-switch into single mode
@@ -64,6 +65,7 @@ function toggle (e) {
     }
     recalcAlternating();
 }
+
 function toggleRepr (e) {
     if (e.target.checked) {
         // show all of them
@@ -84,6 +86,7 @@ function toggleRepr (e) {
     }
     recalcVisibility();
 }
+
 function toggleSIAV (e) {
     if (e.target.checked) {
         // show average
@@ -104,6 +107,7 @@ function toggleSIAV (e) {
     }
     recalcVisibility();
 }
+
 function toggleSIAVPerS (e) {
     if (e.target.checked) {
         // show average
@@ -125,6 +129,7 @@ function toggleSIAVPerS (e) {
     recalcVisibilityPerS();
     recalcAlternating();
 }
+
 var isNotCountryTogglePage = ! document.getElementById('nonDEswitch');
 if (isNotCountryTogglePage == false) {
     var nonDEswitch = document.getElementById('nonDEswitch');
@@ -181,5 +186,4 @@ function showEvt(ev = '333') {
         sinAVGPerSlabel.style.display = 'block';
         recalcVisibilityPerS();
     }
-    //recalcAlternating();
 }

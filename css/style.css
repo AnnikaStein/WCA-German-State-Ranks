@@ -96,12 +96,6 @@ tr:hover {
   width: 9.8rem;
   height: 1.5rem;
 }
-/*
-.sinAvgSwitch {
-  width: 15rem;
-  margin-top: 0.5rem;
-}*/
-
 .switch input {
   opacity: 0;
   width: 0;
@@ -119,12 +113,6 @@ tr:hover {
   -webkit-transition: .4s;
   transition: .4s;
 }
-/*
-.sinAvgSlider {
-  left: 3.7rem;
-  right: 9rem;
-  background-color: #000080;
-}*/
 
 .slider:before {
   position: absolute;
@@ -137,18 +125,10 @@ tr:hover {
   -webkit-transition: .4s;
   transition: .4s;
 }
-/*.sinAvgSlider:after {
-  position: absolute;
-  left: 0.4rem;
-}*/
+
 input:checked + .slider {
   background-color: #00cc66;
 }
-/*
-input:checked + .sinAvgSlider {
-  background-color: #800000;
-}*/
-
 
 input:checked + .slider:before {
   -webkit-transform: translateX(0.8rem);
@@ -182,32 +162,38 @@ input:checked + .slider:before {
 	border-radius:5px;
 	height: 1.7em;
 }
+
 .toggleSwitch * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
 .toggleSwitch label,
 .toggleSwitch > span {
 	line-height: 1.7rem;
 	height: 1.7rem;
 	vertical-align: middle;
 }
+
 .toggleSwitch input:focus ~ a,
 .toggleSwitch input:focus + label {
 	outline: none;
 }
+
 .toggleSwitch label {
 	position: relative;
 	z-index: 3;
 	display: block;
 	width: 100%;
 }
+
 .toggleSwitch input {
 	position: absolute;
 	opacity: 0;
 	z-index: 5;
 }
+
 .toggleSwitch > span {
 	position: absolute;
 	left: 0;
@@ -216,6 +202,7 @@ input:checked + .slider:before {
 	white-space: nowrap;
     margin:0 0rem;
 }
+
 .toggleSwitch > span span {
 	position: absolute;
 	top: 0;
@@ -231,6 +218,7 @@ input:checked + .slider:before {
 	text-align: center;
     line-height:1.7rem;
 }
+
 .toggleSwitch a {
 	position: absolute;
 	right: 50%;
@@ -248,6 +236,7 @@ input:checked + .slider:before {
 	transition: all 0.2s ease-out;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
+
 .toggleSwitch > span span:first-of-type {
 	color: #FFF;
 	opacity: 1;
@@ -255,6 +244,7 @@ input:checked + .slider:before {
 	margin: 0;
     width: 50%;
 }
+
 .toggleSwitch > span span:last-of-type {
 	left:auto;
 	right:0;
@@ -262,6 +252,7 @@ input:checked + .slider:before {
 	margin: 0;
     width: 50%;
 }
+
 .toggleSwitch > span:before {
 	content: '';
 	display: block;
@@ -275,25 +266,16 @@ input:checked + .slider:before {
 	-moz-transition: all 0.2s ease-out;
 	transition: all 0.2s ease-out;
 }
+
 .toggleSwitch input:checked ~ a {
 	left: 50%;
 }
-/*.toggleSwitch input:checked ~ span:before {
-	/* border-color: #0097D1;
-	box-shadow: inset 0 0 0 30px #0097D1;
-}*/
+
 .toggleSwitch input:checked ~ span span:first-of-type {
 	left:0;
 	color:#999;
 }
+
 .toggleSwitch input:checked ~ span span:last-of-type {
 	color:#FFF;
-}
-
-.swi-hidden {
-  display: none;
-}
-
-.swi-active {
-  display: inline-block;
 }
