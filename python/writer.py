@@ -82,6 +82,7 @@ e_list = [it['id'] for it in json_data_e['items']]
 
 # model state dictionary with singles and averages, for each state, for each event
 state_r = {k : {'single' : {e : [] for e in e_list}, 'average' : {e : [] for e in e_list if e not in info.no_avg}} for k in info.id_state.keys()}
+state_r_DE = {k : {'single' : {e : [] for e in e_list}, 'average' : {e : [] for e in e_list if e not in info.no_avg}} for k in info.id_state.keys()}
 
 print()
 # where the magic happens -> reading the ranks once per WCA ID and writing what we need into the dictionary
@@ -101,6 +102,7 @@ for s in info.id_state.keys():
 
         # collect single / average results per person for each event they have a result in
         # WCA ID, full name, best result (numerical value as in DB, not yet human-readable) and NR, CR, WR, country
+        # inclusive version for DE and nonDE
         for e in json_data_p['rank']['singles']:
             state_r[s]['single'][e['eventId']].append([json_data_p['id'],
                                                        json_data_p['name'],
@@ -117,6 +119,24 @@ for s in info.id_state.keys():
                                                         e['rank']['continent'],
                                                         e['rank']['world'],
                                                         json_data_p['country']])
+        if json_data_p['country'] == 'DE':
+            # The same but with strict cut on person country from DE
+            for e in json_data_p['rank']['singles']:
+                state_r_DE[s]['single'][e['eventId']].append([json_data_p['id'],
+                                                           json_data_p['name'],
+                                                           e['best'],
+                                                           e['rank']['country'],
+                                                           e['rank']['continent'],
+                                                           e['rank']['world'],
+                                                           json_data_p['country']])
+            for e in json_data_p['rank']['averages']:
+                state_r_DE[s]['average'][e['eventId']].append([json_data_p['id'],
+                                                            json_data_p['name'],
+                                                            e['best'],
+                                                            e['rank']['country'],
+                                                            e['rank']['continent'],
+                                                            e['rank']['world'],
+                                                            json_data_p['country']])
 
 # the rankings need to be sorted,
 # otherwise we just have them as they appear in the discord reaction roles
@@ -142,9 +162,33 @@ for st,dicts in zip(state_r.keys(),state_r.values()):
             print(sd)
         state_r[st]['average'][s] = sd
 
-
+if debug:
+    print('Sorting strict DE represents only now')
+for st,dicts in zip(state_r_DE.keys(),state_r_DE.values()):
+    if debug:
+        print('Sorting', st, 'now.')
+    for s,sd in zip(dicts['single'].keys(),dicts['single'].values()):
+        if debug:
+            print(s)
+            print(sd)
+        # if tied on best result (index 2 in inner list), sort by name instead (index 1 in inner list)
+        sd.sort(key=itemgetter(2,1))
+        if debug:
+            print(sd)
+        state_r_DE[st]['single'][s] = sd
+    for s,sd in zip(dicts['average'].keys(),dicts['average'].values()):
+        if debug:
+            print(s)
+            print(sd)
+        # same here, just for averages (more precise: mean or average)
+        sd.sort(key=itemgetter(2,1))
+        if debug:
+            print(sd)
+        state_r_DE[st]['average'][s] = sd
+#print(state_r_DE)
 # now, for the combination we start over again with an empty dict
 overview = {'single' : {e : [] for e in e_list}, 'average' : {e : [] for e in e_list if e not in info.no_avg}}
+overview_DE = {'single' : {e : [] for e in e_list}, 'average' : {e : [] for e in e_list if e not in info.no_avg}}
 
 # collecting the best of all 16 states, for each event, for single / avg
 for e in e_list:
@@ -209,7 +253,70 @@ for e in e_list:
                             for v in this_states_best_list:
                                 overview['average'][e].append([st] + v)
 
+if debug:
+    print('Building overview for strict DE represents only now')
+for e in e_list:
+    if debug:
+        print(e)
+    for it, st in enumerate(state_r_DE.keys()):
+        if debug:
+            print('>>', it, st)
+            print('>> Doing Singles')
+        # checking if something exists for that state
+        if len(state_r_DE[st]['single'][e]) > 0:
+            # modeling ties within a federal state
+            this_states_best_value = state_r_DE[st]['single'][e][0][2]
+            this_states_best_list = [v for v in state_r_DE[st]['single'][e] if v[2] == this_states_best_value]
 
+            if debug:
+                print(this_states_best_list)
+            # checking if it's the first state with a result here
+            if len(overview_DE['single'][e]) == 0:
+                # first result for this evt/single -> collect!
+                overview_DE['single'][e] = []
+                for v in this_states_best_list:
+                    overview_DE['single'][e].append([st] + v)
+            else:
+                # could be interesting, check if better or equal than already existing ones
+                if this_states_best_list[0][2] <= overview_DE['single'][e][0][3]:
+                    # better -> collect as the only state
+                    if this_states_best_list[0][2] < overview_DE['single'][e][0][3]:
+                        # currently best -> write state + who achieved that
+                        overview_DE['single'][e] = []
+                        for v in this_states_best_list:
+                            overview_DE['single'][e].append([st] + v)
+                    # just equal -> append
+                    else:
+                        # currently tied
+                        for v in this_states_best_list:
+                            overview_DE['single'][e].append([st] + v)
+
+        # same stuff again, just for averages
+        if e not in info.no_avg:
+            if debug:
+                print('>> Doing Averages')
+            if len(state_r_DE[st]['average'][e]) > 0:
+                # modeling ties within a federal state
+                this_states_best_value = state_r_DE[st]['average'][e][0][2]
+                this_states_best_list = [v for v in state_r_DE[st]['average'][e] if v[2] == this_states_best_value]
+                if debug:
+                    print(this_states_best_list)
+                if len(overview_DE['average'][e]) == 0:
+                    overview_DE['average'][e] = []
+                    for v in this_states_best_list:
+                        overview_DE['average'][e].append([st] + v)
+                else:
+                    if this_states_best_list[0][2] <= overview_DE['average'][e][0][3]:
+                        if this_states_best_list[0][2] < overview_DE['average'][e][0][3]:
+                            # currently best
+                            overview_DE['average'][e] = []
+                            for v in this_states_best_list:
+                                overview_DE['average'][e].append([st] + v)
+                        else:
+                            # currently tied
+                            for v in this_states_best_list:
+                                overview_DE['average'][e].append([st] + v)
+print(overview_DE)
 # to show that we are only using a subset of all available results in German states,
 # i.e. counting how many gave their consent
 print()
@@ -307,9 +414,153 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                               style='width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem')
 
                 h3('WCA German State Ranks'+title_app)
+                with label():
+                    attr(cls = 'switch')
+                    span('Show Non-DE')
+                    input_(type='checkbox', checked = True, value='allRepr', id='allReprSwitch')
+                    span(cls = 'slider round')
+                br()
+                with label():
+                    attr(cls = 'toggleSwitch nolabel', onclick='')
+                    input_(type='checkbox', checked = False, value='single', id='sinAvgSwitch')
+                    a()
+                    with span():
+                        span('Single', cls='left-span')
+                        span('Average', cls='right-span')
+                br()
+                # DE-only
                 # combined sin table
                 with div():
-                    attr(style = 'overflow-x:auto;')
+                    attr(style = 'overflow-x:auto;display:none;', cls='deRepr single ov-hidden siav-active')
+                    with table():
+                        with thead():
+                            with tr():
+                                th('Event', style = 'text-align: center;')
+                                th('Federal State', style = 'text-align: center;')
+                                th('Name', style = 'text-align: left;')
+                                th('WCA Id', style = 'text-align: center;')
+                                th('Value', style = 'text-align: right;')
+                                th('WR', style = 'text-align: right;')
+                                th('CR', style = 'text-align: right;')
+                                th('NR', style = 'text-align: right;')
+                                th('Country', style = 'text-align: center;')
+                        with tbody():
+                            for es, s in zip(overview_DE['single'].keys(),overview_DE['single'].values()):
+                                len_s = len(s)
+                                if debug:
+                                    print(es, s)
+                                    print('len(s)', len_s)
+                                if len_s > 1:
+                                    for si, sid in enumerate(s):
+                                        with tr():
+                                            if si == 0:
+                                                td(img(src=f'../assets/event-svg/{es}.svg',
+                                                       style='text-align: center; height: 1.6rem; width: 1.6rem;'),
+                                                   rowspan=f'{len_s}',
+                                                   style = 'text-align: center; position: relative;')
+                                            td(sid[0], style = 'text-align: center;')
+                                            td(sid[2], style = 'text-align: left;')
+                                            td(a(sid[1], href=f'https://www.worldcubeassociation.org/persons/{sid[1]}'), style = 'text-align: center;')
+                                            if es not in ['333fm', '333mbf', '333mbo']:
+                                                td(util.centiseconds_to_human(sid[3]), style = 'text-align: right;')
+                                            elif es == '333mbf':
+                                                td(util.mbf_to_human(sid[3]), style = 'text-align: right;')
+                                            elif es == '333mbo':
+                                                td(util.mbo_to_human(sid[3]), style = 'text-align: right;')
+                                            else:
+                                                td(sid[3], style = 'text-align: right;')
+                                            td(sid[6], style = 'text-align: right;')
+                                            td(sid[5], style = 'text-align: right;')
+                                            td(sid[4], style = 'text-align: right;')
+                                            td(sid[7], style = 'text-align: center;')
+                                elif len_s == 1:
+                                    sid = s[0]
+                                    if debug:
+                                        print(sid)
+                                    with tr():
+                                        td(img(src=f'../assets/event-svg/{es}.svg',
+                                               style='text-align: center; height: 1.6rem; width: 1.6rem;'),
+                                           rowspan=f'{len_s}',
+                                           style = 'text-align: center; position: relative;')
+                                        td(sid[0], style = 'text-align: center;')
+                                        td(sid[2], style = 'text-align: left;')
+                                        td(a(sid[1], href=f'https://www.worldcubeassociation.org/persons/{sid[1]}'), style = 'text-align: center;')
+                                        if es not in ['333fm', '333mbf', '333mbo']:
+                                            td(util.centiseconds_to_human(sid[3]), style = 'text-align: right;')
+                                        elif es == '333mbf':
+                                            td(util.mbf_to_human(sid[3]), style = 'text-align: right;')
+                                        elif es == '333mbo':
+                                            td(util.mbo_to_human(sid[3]), style = 'text-align: right;')
+                                        else:
+                                            td(sid[3], style = 'text-align: right;')
+                                        td(sid[6], style = 'text-align: right;')
+                                        td(sid[5], style = 'text-align: right;')
+                                        td(sid[4], style = 'text-align: right;')
+                                        td(sid[7], style = 'text-align: center;')
+                # combined avg table
+                with div():
+                    attr(style = 'overflow-x:auto;display:none;', cls='deRepr average ov-hidden siav-hidden')
+                    with table():
+                        with thead():
+                            with tr():
+                                th('Event', style = 'text-align: center;')
+                                th('Federal State', style = 'text-align: center;')
+                                th('Name', style = 'text-align: left;')
+                                th('WCA Id', style = 'text-align: center;')
+                                th('Value', style = 'text-align: right;')
+                                th('WR', style = 'text-align: right;')
+                                th('CR', style = 'text-align: right;')
+                                th('NR', style = 'text-align: right;')
+                                th('Country', style = 'text-align: center;')
+                        with tbody():
+                            for ea, aa in zip(overview_DE['average'].keys(),overview_DE['average'].values()):
+                                len_a = len(aa)
+                                if debug:
+                                    print(ea, aa)
+                                    print('len(a)', len_a)
+                                if len_a > 1:
+                                    for ai, aid in enumerate(aa):
+                                        with tr():
+                                            if ai == 0:
+                                                td(img(src=f'../assets/event-svg/{ea}.svg',
+                                                       style='text-align: center; height: 1.6rem; width: 1.6rem;'),
+                                                   rowspan=f'{len_a}',
+                                                   style = 'text-align: center; position: relative;')
+                                            td(aid[0], style = 'text-align: center;')
+                                            td(aid[2], style = 'text-align: left;')
+                                            td(a(aid[1], href=f'https://www.worldcubeassociation.org/persons/{aid[1]}'), style = 'text-align: center;')
+                                            if es not in ['333fm']:
+                                                td(util.centiseconds_to_human(aid[3]), style = 'text-align: right;')
+                                            else:
+                                                td(aid[3], style = 'text-align: right;')
+                                            td(aid[6], style = 'text-align: right;')
+                                            td(aid[5], style = 'text-align: right;')
+                                            td(aid[4], style = 'text-align: right;')
+                                            td(aid[7], style = 'text-align: center;')
+                                elif len_a == 1:
+                                    aid = aa[0]
+                                    if debug:
+                                        print(aid)
+                                    with tr():
+                                        td(img(src=f'../assets/event-svg/{ea}.svg',
+                                               style='text-align: center; height: 1.6rem; width: 1.6rem;'),
+                                           rowspan=f'{len_a}',
+                                           style = 'text-align: center; position: relative;')
+                                        td(aid[0], style = 'text-align: center;')
+                                        td(aid[2], style = 'text-align: left;')
+                                        td(a(aid[1], href=f'https://www.worldcubeassociation.org/persons/{aid[1]}'), style = 'text-align: center;')
+                                        if es not in ['333fm']:
+                                            td(util.centiseconds_to_human(aid[3]), style = 'text-align: right;')
+                                        else:
+                                            td(aid[3], style = 'text-align: right;')
+                                        td(aid[6], style = 'text-align: right;')
+                                        td(aid[5], style = 'text-align: right;')
+                                        td(aid[4], style = 'text-align: right;')
+                                        td(aid[7], style = 'text-align: center;')
+                # DE and nonDE
+                # combined sin table
+                with div():
+                    attr(style = 'overflow-x:auto;display:block;', cls='allRepr single ov-active siav-active')
                     with table():
                         with thead():
                             with tr():
@@ -377,7 +628,7 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                                         td(sid[7], style = 'text-align: center;')
                 # combined avg table
                 with div():
-                    attr(style = 'overflow-x:auto;')
+                    attr(style = 'overflow-x:auto;display:none;', cls='allRepr average ov-active siav-hidden')
                     with table():
                         with thead():
                             with tr():
@@ -459,18 +710,18 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                         attr(cls='butn-con')
                         a('Overview',
                           href=f'./overview_all.html',
-                          cls='w3-button w3-round w3-theme-d3link',
+                          cls='w3-button w3-round w3-theme-d3link navi-btn',
                           style='width: 5.5rem;padding:0;text-align: center;font-size: 0.7rem')
                         for st in state_r.keys():
                             if st == choice:
                                 a(st,
                                   href=f'./by-state_{st}.html',
-                                  cls='w3-button w3-round w3-theme-d3link btn-active',
+                                  cls='w3-button w3-round w3-theme-d3link btn-active navi-btn',
                                   style='width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem')
                             else:
                                 a(st,
                                   href=f'./by-state_{st}.html',
-                                  cls='w3-button w3-round w3-theme-d3link',
+                                  cls='w3-button w3-round w3-theme-d3link navi-btn',
                                   style='width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem')
                 h3('WCA German State Ranks'+title_app)
                 with label():
@@ -490,14 +741,20 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                             else:
                                 with button(cls='btn', onclick=f'showEvt(evt=\'{ev}\')', id=f'btn-{ev}'):
                                     img(src=f'../assets/event-svg/{ev}.svg', cls='ebdSVG', style='height: 1.6rem; width: 1.6rem;')
-                br()
+                with label():
+                    attr(style='display:block;', cls = 'toggleSwitch nolabel', onclick='', id='sinAvgLabelPerS')
+                    input_(type='checkbox', checked = False, value='single', id='sinAvgSwitchPerS')
+                    a()
+                    with span():
+                        span('Single', cls='left-span')
+                        span('Average', cls='right-span')
                 for es, s in zip(s_dict.keys(),s_dict.values()):
                     with div():
                         if es == '333':
-                            attr(cls=f'evt-active sin-{es}')
+                            attr(cls=f'evt-active single siav-active sin-{es}', style='display:block;')
                         else:
-                            attr(cls=f'evt-hidden sin-{es}')
-                        text(es + ' (Single)')
+                            attr(cls=f'evt-hidden single siav-active sin-{es}', style='display:none;')
+                        #text(es + ' (Single)')
                         with div():
                             attr(style = 'overflow-x:auto;')
                             with table():
@@ -565,10 +822,10 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                 for ea, aa in zip(a_dict.keys(),a_dict.values()):
                     with div():
                         if ea == '333':
-                            attr(cls=f'evt-active avg-{ea}')
+                            attr(cls=f'evt-active average siav-hidden avg-{ea}', style='display:none;')
                         else:
-                            attr(cls=f'evt-hidden avg-{ea}')
-                        text(ea + ' (Average)')
+                            attr(cls=f'evt-hidden average siav-hidden avg-{ea}', style='display:none;')
+                        #text(ea + ' (Average)')
                         with div():
                             attr(style = 'overflow-x:auto;')
                             with table():
@@ -666,7 +923,7 @@ def generate_html(variant = 'by-state', choice = 'bw'):
         print('#'*8)
         print()
         print('>> Writing HTML file:')
-        print(doc.render())
+        #print(doc.render())
         print()
         print('#'*8)
         print()

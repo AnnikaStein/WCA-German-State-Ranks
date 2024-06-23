@@ -9,3 +9,7 @@
 
 # local files are meant to be local
 local
+
+# ignore all assets but the relevant icons
+assets/*
+!assets/event-svg
