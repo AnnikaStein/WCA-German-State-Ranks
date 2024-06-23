@@ -181,6 +181,8 @@ function showEvt(ev = '333') {
     var sinAVGPerSlabel = document.getElementById('sinAvgLabelPerS');
     if (no_avg.includes(ev)) {
         sinAVGPerSlabel.style.display = 'none';
+        var sinAVGPerSswitch = document.getElementById('sinAvgSwitchPerS');
+        sinAVGPerSswitch.checked = false;
         recalcVisibilityPerS(forceSin = true);
     } else {
         sinAVGPerSlabel.style.display = 'block';
