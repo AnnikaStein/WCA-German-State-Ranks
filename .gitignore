@@ -13,3 +13,4 @@ local
 # ignore all assets but the relevant icons
 assets/*
 !assets/event-svg
+!assets/list_ids
