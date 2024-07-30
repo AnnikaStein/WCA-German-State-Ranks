@@ -262,10 +262,10 @@ def create_state_info(for_testing_only = False, deb = False):
                                      all_registered = for_testing_only,
                                      debug = deb)
 
-    return all_states, state_teams
+    return all_states, state_teams, states_by_mean_avg_kinch
 
 if __name__ == "__main__":
     print("Testing statecup functionality independently.")
-    main_func_output_scores, main_func_output_teams = create_state_info(for_testing_only = True,
+    main_func_output_scores, main_func_output_teams, main_func_output_mean_avg_kinch = create_state_info(for_testing_only = True,
                                                                         debug = True)
-    print(main_func_output_scores, '\n\n', main_func_output_teams)
+    print(main_func_output_scores, '\n\n', main_func_output_teams, '\n\n', main_func_output_mean_avg_kinch)

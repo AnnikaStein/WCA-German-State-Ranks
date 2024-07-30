@@ -17,6 +17,9 @@ import info
 # make formatting easier / human-readable
 import util
 
+import statecup
+import statecup_info
+
 # to record when the last update happened
 import datetime
 
@@ -29,6 +32,8 @@ parser.add_argument('-l', '--local', default = False,
                     help='Use locally available json data')
 parser.add_argument('-a', '--automate', default = False,
                     help='Do not write json data to local dir')
+parser.add_argument('-s', '--test_statecup', default = False,
+                    help='Create teams for statecup assuming everyone wants to compete')
 
 args = parser.parse_args()
 
@@ -37,6 +42,7 @@ print('>> Running with options:')
 print('>>   debug =', args.debug)
 print('>>   local =', args.local)
 print('>>   automate =', args.automate)
+print('>>   test_statecup =', args.test_statecup)
 
 # if you want a bunch of printouts to understand what's going on -> True,
 # default -> False (just get very few printouts)
@@ -48,6 +54,8 @@ local = args.local
 # Don't save downloaded jsons when running on schedule (GitHub Action)
 automate = args.automate
 
+# Everyone who is registered is also willing to compete if this is True
+test_statecup = args.test_statecup
 
 # unofficial api, returns version of data
 if local:
@@ -316,7 +324,18 @@ for e in e_list:
                             # currently tied
                             for v in this_states_best_list:
                                 overview_DE['average'][e].append([st] + v)
+print('>> Overview:')
 print(overview_DE)
+
+# German State Cup section - calculation externalized to statecup.py
+print('>> Building State Cup Custom Kinch Ranks. This will take a while.')
+statecup_scores, statecup_teams, statecup_mean_scores = statecup.create_state_info(for_testing_only = test_statecup)
+if debug:
+    print('>> State Cup Custom Kinch Ranks:')
+    print(statecup_info)
+    print(statecup_teams)
+    print(statecup_mean_scores)
+
 # to show that we are only using a subset of all available results in German states,
 # i.e. counting how many gave their consent
 print()
@@ -345,6 +364,9 @@ Variant 1:
 Variant 2:
 - Fill out the form here: [link to enter the ranks](https://docs.google.com/forms/d/e/1FAIpQLSdoLLgBLfTxZIwKJx9QC5XywuMRBreKU4ElbLTvMEZqxRHFcw/viewform).
 
+## You want to participate in the state cup?
+Fill out the form here: [link](https://docs.google.com/forms/d/e/1FAIpQLSdqA8dWufte8_KMMjQVvB0JpeQgKIzr1FH1Dk2-MgjFVEZjdw/viewform).
+
 ## Data statement
 > This information is based on competition results owned and maintained by the
 > World Cube Assocation, published at https://worldcubeassociation.org/results
@@ -360,7 +382,7 @@ Enjoy what you see? Feel free to support my projects here: [at my Cuboss-Affilia
 
 # called multiple times, for different purposes, however with some equal parts across pages
 def generate_html(variant = 'by-state', choice = 'bw'):
-    # three types of pages to generate, each coming with different setups here
+    # four types of pages to generate, each coming with different setups here
     if variant == 'by-state':
         title_app = f' - {info.name_state[choice]}'
         r = state_r[choice]
@@ -369,6 +391,9 @@ def generate_html(variant = 'by-state', choice = 'bw'):
         prefix = '../pages/'
     if variant == 'overview':
         title_app = ' - Overview'
+        prefix = '../pages/'
+    if variant == 'state-cup':
+        title_app = ' - State Cup Custom Kinch Ranks and Teams'
         prefix = '../pages/'
     if variant == 'index':
         title_app = ''
@@ -395,7 +420,70 @@ def generate_html(variant = 'by-state', choice = 'bw'):
         comment(' Content container ')
 
         # individual content per type, here from all states combined
-        if variant == 'overview':
+        if variant == 'state-cup':
+            event_str = ', '.join(statecup_info.EVENTS_IN_STATECUP)
+            with div():
+                # give class attribute, don't use python reserved keywords
+                attr(cls = 'container')
+                with div():
+                    attr(style = 'overflow-x:auto;')
+                    with div():
+                        attr(cls='butn-con')
+                        a('Overview',
+                          href=f'./overview_all.html',
+                          cls='w3-button w3-round w3-theme-d3link',
+                          style='width: 5.5rem; padding: 0; text-align: center; font-size: 0.7rem')
+                        for st in state_r.keys():
+                            a(st,
+                              href=f'./by-state_{st}.html',
+                              cls='w3-button w3-round w3-theme-d3link',
+                              style='width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem')
+                        a('State Cup',
+                          href=f'./state-cup.html',
+                          cls='w3-button w3-round w3-theme-d3link btn-active',
+                          style='width: 5.5rem; padding: 0; text-align: center; font-size: 0.7rem')
+                h3('WCA German State Ranks'+title_app)
+                p(f'The state cup is set to draw three out of those events randomly per match: {event_str}.' \
+                + ' These events are used to determine a custom national average kinch rank per person, and a mean score per state. A person\'s kinch score is obtained from NR/PR * 100, with 0.0 if no result for the event, 100.0 if German NR-holder. Then take the average for those events in the list mentioned above.')
+                p('Teams are obtained from: 1. state ranks, 2. registration, 3. willingness to compete (feature in the future version with another google form to fill out) in a first pass.' \
+                + ' States with too few eligible members are filled up with honorary cubers from other states.' \
+                + ' For that we use: mean score per state to sort states, combine best with worst and so on (second pass).' \
+                + ' In a third pass, if still not all states have enough members, we add available cubers (first from states with lowest mean custom kinch).')
+
+                for st in state_r.keys():
+                    scores = statecup_scores[st]
+                    team = statecup_teams[st]
+                    mean_avg_score = round(statecup_mean_scores[st], 2)
+                    long_name = info.name_state[st]
+                    h4(long_name)
+                    p('Preliminary state cup team (if every registered cuber for Nats would be willing to participate). We perform the algorithm again close to the competition only with those who actually want to compete.' \
+                    + f' 1. {team[0]}, 2. {team[1]}, 3. {team[2]}')
+                    h6(f'Current state custom kinch scores, mean of this state (Nats competitors only): {mean_avg_score}')
+                    with div():
+                        attr(style = 'overflow-x:auto')
+                        with table():
+                            with thead():
+                                with tr():
+                                    th('average_kinch', style = 'text-align: center;')
+                                    th('WCA Id', style = 'text-align: center;')
+                                    th('Name', style = 'text-align: left;')
+                                    th('registered_at_comp', style = 'text-align: center;')
+                                    th('willing_to_compete', style = 'text-align: center;')
+                            with tbody():
+                                for av, wc, na, re, wi in zip(scores['average_kinch'],
+                                                            scores['wca_id'],
+                                                            scores['name'],
+                                                            scores['registered_at_comp'],
+                                                            scores['willing_to_compete']):
+                                    with tr():
+                                        td(av, style = 'text-align: center;')
+                                        td(wc, style = 'text-align: center;')
+                                        td(na, style = 'text-align: left;')
+                                        td('Yes' if re else 'No', style = 'text-align: center;')
+                                        td('Yes' if wi else 'No', style = 'text-align: center;')
+
+        # individual content from all states combined
+        elif variant == 'overview':
             with div():
                 # give class attribute, don't use python reserved keywords
                 attr(cls = 'container')
@@ -412,6 +500,10 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                               href=f'./by-state_{st}.html',
                               cls='w3-button w3-round w3-theme-d3link',
                               style='width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem')
+                        a('State Cup',
+                          href=f'./state-cup.html',
+                          cls='w3-button w3-round w3-theme-d3link',
+                          style='width: 5.5rem; padding: 0; text-align: center; font-size: 0.7rem')
 
                 h3('WCA German State Ranks'+title_app)
                 with label():
@@ -699,6 +791,7 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                         a('Overview', href=f'pages/overview_all.html', cls='w3-button w3-round w3-theme-d3link')
                         for st in state_r.keys():
                             a(info.name_state[st], href=f'pages/by-state_{st}.html', cls='w3-button w3-round w3-theme-d3link')
+                        a('State Cup Custom Kinch Ranks and Teams', href='pages/state-cup.html', cls='w3-button w3-round w3-theme-d3link')
 
         # individual states
         else:
@@ -723,6 +816,10 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                                   href=f'./by-state_{st}.html',
                                   cls='w3-button w3-round w3-theme-d3link navi-btn',
                                   style='width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem')
+                        a('State Cup',
+                          href=f'./state-cup.html',
+                          cls='w3-button w3-round w3-theme-d3link',
+                          style='width: 5.5rem; padding: 0; text-align: center; font-size: 0.7rem')
                 h3('WCA German State Ranks'+title_app)
                 with label():
                     attr(cls = 'switch')
@@ -885,6 +982,13 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                   target='_blank')
                 text('.')
                 br()
+                h4('You want to participate in the state cup?')
+                text('Fill out the form here:')
+                a('link',
+                  href='https://docs.google.com/forms/d/e/1FAIpQLSdqA8dWufte8_KMMjQVvB0JpeQgKIzr1FH1Dk2-MgjFVEZjdw/viewform',
+                  target='_blank')
+                text('.')
+                br()
                 h4('Data statement')
                 text(f'From {id_count} WCA IDs.')
                 br()
@@ -927,7 +1031,7 @@ def generate_html(variant = 'by-state', choice = 'bw'):
         print()
         print('#'*8)
         print()
-    if variant == 'index':
+    if variant == 'index' or variant == 'state-cup':
         with open(f"{prefix}{variant}.html", "w") as text_file:
             print(doc, file=text_file)
     else:
@@ -949,6 +1053,9 @@ generate_html(variant = 'index', choice = 'all')
 
 print('>> Writing updated state rank overview to UI.')
 generate_html(variant = 'overview', choice = 'all')
+
+print('>> Writing statecup info and teams to UI.')
+generate_html(variant = 'state-cup', choice = 'all')
 
 for st in state_r.keys():
     print(f'>> Writing {st} ranks to UI.')
