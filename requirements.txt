@@ -1,2 +1,3 @@
 dominate
 markdown
+pandas
