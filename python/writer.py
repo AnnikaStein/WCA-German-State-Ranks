@@ -34,6 +34,8 @@ parser.add_argument('-a', '--automate', default = False,
                     help='Do not write json data to local dir')
 parser.add_argument('-s', '--test_statecup', default = False,
                     help='Create teams for statecup assuming everyone wants to compete')
+parser.add_argument('-e', '--via_expectation_values', default = True,
+                    help='Create teams for statecup with expectation values for optimal teams')
 
 args = parser.parse_args()
 
@@ -43,6 +45,7 @@ print('>>   debug =', args.debug)
 print('>>   local =', args.local)
 print('>>   automate =', args.automate)
 print('>>   test_statecup =', args.test_statecup)
+print('>>   via_expectation_values =', args.via_expectation_values)
 
 # if you want a bunch of printouts to understand what's going on -> True,
 # default -> False (just get very few printouts)
@@ -56,6 +59,12 @@ automate = args.automate
 
 # Everyone who is registered is also willing to compete if this is True
 test_statecup = args.test_statecup
+
+# Optimize initial team composition via expectation values over all possible combinations
+# ... of teams
+# ... of chosen events
+# ... of cubers doing different events in the team
+via_expectation_values = args.via_expectation_values
 
 # unofficial api, returns version of data
 if local:
@@ -329,7 +338,7 @@ print(overview_DE)
 
 # German State Cup section - calculation externalized to statecup.py
 print('>> Building State Cup Custom Kinch Ranks. This will take a while.')
-statecup_scores, statecup_teams, statecup_mean_scores = statecup.create_state_info(for_testing_only = test_statecup)
+statecup_scores, statecup_teams, statecup_mean_scores = statecup.create_state_info(for_testing_only = test_statecup, expect = via_expectation_values)
 if debug:
     print('>> State Cup Custom Kinch Ranks:')
     print(statecup_info)
@@ -444,8 +453,8 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                           style='width: 5.5rem; padding: 0; text-align: center; font-size: 0.7rem')
                 h3('WCA German State Ranks'+title_app)
                 p(f'The state cup is set to draw three out of those events randomly per match: {event_str}.' \
-                + ' These events are used to determine a custom national average kinch rank per person, and a mean score per state. A person\'s kinch score is obtained from NR/PR * 100, with 0.0 if no result for the event, 100.0 if German NR-holder. 222, pyram, skewb receive 0.5 weight, 333, 333bf double weight, remaining events are factored in with a weight of 1. Then take the average for those events in the list mentioned above.')
-                p('Teams are obtained from: 1. state ranks, 2. registration, 3. willingness to compete (feature in the future version with another google form to fill out) in a first pass.' \
+                + ' These events are used to determine custom national average kinch scores per person, and a mean score per state. A person\'s kinch score is obtained from NR/PR * 100, with 0.0 if no result for the event, 100.0 if German NR-holder.')
+                p('Teams are obtained from: 1. state ranks info / scores, 2. registration data, 3. willingness to compete (with another google form to fill out) in a first pass. This first pass determines the team by optimizing the expected performance in the state cup, simulating all possible teams per state, all event combinations, and all permutations of team members. The three highest ranked (via average_kinch) are not necessarily also optimal via expectation value.' \
                 + ' States with too few eligible members are filled up with honorary cubers from other states.' \
                 + ' For that we use: mean score per state to sort states, combine best with worst and so on (second pass).' \
                 + ' In a third pass, if still not all states have enough members, we add available cubers (first from states with lowest mean custom kinch).')
