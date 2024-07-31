@@ -50,11 +50,11 @@ def get_partial_kinch_ranks(nrdict, prdict, events = statecup_info.EVENTS_IN_STA
     return partial_kinch_dict
 
 # person level
-def get_average_kinch(kinch_dict, events = statecup_info.EVENTS_IN_STATECUP):
+def get_average_kinch(kinch_dict, events = statecup_info.EVENTS_IN_STATECUP, weights = statecup_info.EVENT_WEIGHTS):
     nevents = len(events)
     sum = 0.0
-    for event in events:
-        sum += kinch_dict[event]
+    for i, event in enumerate(events):
+        sum += kinch_dict[event] * weights[i]
     average_kinch = round(sum / nevents, 2)
     return average_kinch
 
@@ -267,5 +267,5 @@ def create_state_info(for_testing_only = False, deb = False):
 if __name__ == "__main__":
     print("Testing statecup functionality independently.")
     main_func_output_scores, main_func_output_teams, main_func_output_mean_avg_kinch = create_state_info(for_testing_only = True,
-                                                                        debug = True)
+                                                                        deb = True)
     print(main_func_output_scores, '\n\n', main_func_output_teams, '\n\n', main_func_output_mean_avg_kinch)

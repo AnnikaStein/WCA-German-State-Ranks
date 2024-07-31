@@ -444,7 +444,7 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                           style='width: 5.5rem; padding: 0; text-align: center; font-size: 0.7rem')
                 h3('WCA German State Ranks'+title_app)
                 p(f'The state cup is set to draw three out of those events randomly per match: {event_str}.' \
-                + ' These events are used to determine a custom national average kinch rank per person, and a mean score per state. A person\'s kinch score is obtained from NR/PR * 100, with 0.0 if no result for the event, 100.0 if German NR-holder. Then take the average for those events in the list mentioned above.')
+                + ' These events are used to determine a custom national average kinch rank per person, and a mean score per state. A person\'s kinch score is obtained from NR/PR * 100, with 0.0 if no result for the event, 100.0 if German NR-holder. 222, pyram, skewb receive 0.5 weight, 333, 333bf double weight, remaining events are factored in with a weight of 1. Then take the average for those events in the list mentioned above.')
                 p('Teams are obtained from: 1. state ranks, 2. registration, 3. willingness to compete (feature in the future version with another google form to fill out) in a first pass.' \
                 + ' States with too few eligible members are filled up with honorary cubers from other states.' \
                 + ' For that we use: mean score per state to sort states, combine best with worst and so on (second pass).' \
