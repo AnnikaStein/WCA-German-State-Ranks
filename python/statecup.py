@@ -29,16 +29,20 @@ def get_registered_returners(comp_id = statecup_info.FOR_COMPETITION):
     return id_list
 
 # country level
-def get_relevant_NRs(events = statecup_info.EVENTS_IN_STATECUP):
+def get_relevant_NRs(events = statecup_info.EVENTS_IN_STATECUP, restype = statecup_info.RES_TYPE):
     nrdict = {ev : -999 for ev in events}
-    for event in events:
-        with libreq.urlopen(f'https://raw.githubusercontent.com/robiningelbrecht/wca-rest-api/master/api/rank/DE/average/{event}.json') as file:
-            gerranks = json.load(file)
+    for e, event in enumerate(events):
+        if restype[e] == 'a':
+            with libreq.urlopen(f'https://raw.githubusercontent.com/robiningelbrecht/wca-rest-api/master/api/rank/DE/average/{event}.json') as file:
+                gerranks = json.load(file)
+        else:
+            with libreq.urlopen(f'https://raw.githubusercontent.com/robiningelbrecht/wca-rest-api/master/api/rank/DE/single/{event}.json') as file:
+                gerranks = json.load(file)
         nrdict[event] = gerranks['items'][0]['best']
     return nrdict
 
 # person level
-def get_relevant_PRs(wca_id, events = statecup_info.EVENTS_IN_STATECUP):
+def get_relevant_PRs(wca_id, events = statecup_info.EVENTS_IN_STATECUP, restype = statecup_info.RES_TYPE):
     eligible = False
     prdict = {ev : -999 for ev in events}
     with libreq.urlopen(f'https://raw.githubusercontent.com/robiningelbrecht/wca-rest-api/master/api/persons/{wca_id}.json') as file:
@@ -47,6 +51,9 @@ def get_relevant_PRs(wca_id, events = statecup_info.EVENTS_IN_STATECUP):
         eligible = True
         for e in person['rank']['averages']:
             prdict[e['eventId']] = e['best']
+        for e in person['rank']['singles']:
+            if e['eventId'] == '333bf':
+                prdict[e['eventId']] = e['best']
     return prdict, person['name'], eligible
 
 # person level
