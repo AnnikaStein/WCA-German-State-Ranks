@@ -26,7 +26,8 @@ id_state = {
             '2024SCHU18',
             '2022MEZL01',
             '2021MEZL01',
-            '2023SCHI03'],
+            '2023SCHI03',
+            '2023KNAC01'],
     'bay' : ['2016ROLZ01',
              '2022WALS03',
              '2019ROHR01',
@@ -174,7 +175,8 @@ id_state = {
             '2023FRAN37',
             '2024MAAS01',
             '2023KNOP04'],
-    'th' : ['2016SCHO08'],
+    'th' : ['2016SCHO08',
+            '2012KALH01'],
 }
 
 name_state = {
