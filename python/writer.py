@@ -465,9 +465,9 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                     mean_avg_score = round(statecup_mean_scores[st], 2)
                     long_name = info.name_state[st]
                     h4(long_name)
-                    p('Preliminary state cup team (if every registered cuber for Nats would be willing to participate). We perform the algorithm again close to the competition only with those who actually want to compete.' \
+                    p('Preliminary state cup team (must have stated willing_to_compete):' \
                     + f' 1. {team[0]}, 2. {team[1]}, 3. {team[2]}')
-                    h6(f'Current state custom kinch scores, mean of this state (Nats competitors only): {mean_avg_score}')
+                    h6(f'Current state custom kinch scores, mean of this state (willing_to_compete only): {mean_avg_score}')
                     with div():
                         attr(style = 'overflow-x:auto')
                         with table():

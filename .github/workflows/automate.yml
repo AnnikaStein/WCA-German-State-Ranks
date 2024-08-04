@@ -31,7 +31,7 @@ jobs:
       - name: Execute python scripts ▶️
         run: |
           cd python
-          python writer.py --automate True --test_statecup True
+          python writer.py --automate True
 
       # https://stackoverflow.com/a/74325815/22745629
       # Don't fail later when nothing to commit
