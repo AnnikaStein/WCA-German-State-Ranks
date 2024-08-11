@@ -2,6 +2,7 @@
 from itertools import combinations, permutations
 import json
 import pandas as pd
+from timeit import default_timer as timer
 import urllib.request as libreq
 
 # WCA German State Ranks custom modules
@@ -124,11 +125,32 @@ def get_state_avg_kinch(state_df, all_registered = False):
                 'average_kinch'].mean()
 
 # state level
-def get_optimal_team(eligible, event_combis, events = statecup_info.EVENTS_IN_STATECUP, debug = False):
-    # TODO for efficiency only need people who do not have at least TEAM_SIZE nemeses in state
-
+def get_optimal_team(eligible, event_combis, events = statecup_info.EVENTS_IN_STATECUP, debug = False, fewnemeses = True):
     eligible_names = eligible['name'].tolist()
-
+    if fewnemeses:
+        if len(eligible_names) > statecup_info.TEAM_SIZE:
+            original_names = eligible_names.copy()
+            eligible_names = []
+            nEvents = len(events)
+            for n in original_names:
+                n_nemeses = 0
+                m = eligible[eligible['name'] == n][events]
+                notm = eligible[eligible['name'] != n][events]
+                # could be developed as variable size df to save one loop below
+                # test_gt = notm.gt(m).sum(axis=1)
+                if debug:
+                    print('m:', m)
+                    print('notm:', notm)
+                for nm in range(len(notm.index)):
+                    other = notm.iloc[nm]
+                    otherbetter = (other > m).sum(axis=1).values[0]
+                    if debug:
+                        print('otherbetter:', otherbetter)
+                    if otherbetter == nEvents:
+                        n_nemeses += 1
+                if n_nemeses < statecup_info.TEAM_SIZE:
+                    eligible_names.append(n)
+    print('>> eligible_names:', eligible_names)
     # create all possible teams
     possible_teams = get_possible_teams_per_state(eligible_names)
     if debug:
@@ -213,7 +235,7 @@ def create_state_teams(all_states_df, state_order, event_combis, all_registered 
                 take_up_to = min(n_in_state, statecup_info.TEAM_SIZE)
                 if n_in_state > statecup_info.TEAM_SIZE:
                     # preliminary people (involves the simulation)
-                    preliminary_people = get_optimal_team(eligible, event_combis)
+                    preliminary_people = get_optimal_team(eligible, event_combis, debug = debug)
                     # extra avail
                     extra_avail = eligible[~eligible['name'].isin(preliminary_people)]['name'].tolist()
                     n_avail = len(extra_avail)
@@ -371,6 +393,7 @@ def create_state_info(for_testing_only = False, deb = False, expect = False):
 
     # now build the proposed team composition,
     # from registered (+ willing) competitors
+    start = timer()
     state_teams = create_state_teams(all_states,
                                      sorted_states,
                                      possible_event_combinations,
@@ -378,6 +401,8 @@ def create_state_info(for_testing_only = False, deb = False, expect = False):
                                      debug = deb,
                                      expectation_value_variant = expect)
 
+    end = timer()
+    print('>> Elapsed time for team creation:', end - start)
     return all_states, state_teams, states_by_mean_avg_kinch
 
 if __name__ == "__main__":
