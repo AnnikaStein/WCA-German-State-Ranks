@@ -150,7 +150,8 @@ def get_optimal_team(eligible, event_combis, events = statecup_info.EVENTS_IN_ST
                         n_nemeses += 1
                 if n_nemeses < statecup_info.TEAM_SIZE:
                     eligible_names.append(n)
-    print('>> eligible_names:', eligible_names)
+    if debug:
+        print('>> eligible_names:', eligible_names)
     # create all possible teams
     possible_teams = get_possible_teams_per_state(eligible_names)
     if debug:

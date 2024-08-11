@@ -800,7 +800,7 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                         a('Overview', href=f'pages/overview_all.html', cls='w3-button w3-round w3-theme-d3link')
                         for st in state_r.keys():
                             a(info.name_state[st], href=f'pages/by-state_{st}.html', cls='w3-button w3-round w3-theme-d3link')
-                        a('State Cup Custom Kinch Ranks and Teams', href='pages/state-cup.html', cls='w3-button w3-round w3-theme-d3link')
+                        a('State Cup', href='pages/state-cup.html', cls='w3-button w3-round w3-theme-d3link')
 
         # individual states
         else:
