@@ -16,5 +16,5 @@ with open('../assets/list_ids/statecup_enthusiasts.txt', 'r') as file:
 # if their state is otherwise not filled
 # this comes from private or public messages directed to the responsible (AS)
 CUSTOM_NEWCOMERS = {st : [] for st in info.name_state.keys()}
-CUSTOM_NEWCOMERS['br'] = ['Emil Krause']
+CUSTOM_NEWCOMERS['br'] = ['Emil Krause','Johanna Gerhardt']
 CUSTOM_NEWCOMERS['sh'] = ['Gesa Seifert']
