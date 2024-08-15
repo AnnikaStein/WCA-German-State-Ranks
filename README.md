@@ -2,16 +2,10 @@
 [![WCA German State Ranks Automation](https://github.com/AnnikaStein/WCA-German-State-Ranks/actions/workflows/automate.yml/badge.svg)](https://github.com/AnnikaStein/WCA-German-State-Ranks/actions/workflows/automate.yml)
 [![pages-build-deployment](https://github.com/AnnikaStein/WCA-German-State-Ranks/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AnnikaStein/WCA-German-State-Ranks/actions/workflows/pages/pages-build-deployment)
 
-Displaying the PRs of people who have given *explicit consent* (opt-in) to appear in German WCA state rankings. Federal state data taken from the GCA Discord Server (reaction roles), PRs taken from the WCA database via the [unofficial API](https://github.com/robiningelbrecht/wca-rest-api).
+Displaying the PRs of people who have given *explicit consent* (opt-in) to appear in German WCA state rankings. PRs taken from the WCA database via the [unofficial API](https://github.com/robiningelbrecht/wca-rest-api).
 
 ## How to appear in these rankings?
-Variant 1:
-- Join the GCA Discord Server and read + understand the rules.
-- Append your WCA ID to your username (example: Nickname | 2024ABCD42)
-- Click one of the 16 federal state reaction roles.
-
-Variant 2:
-- Fill out the form here: [link to enter the ranks](https://docs.google.com/forms/d/e/1FAIpQLSdoLLgBLfTxZIwKJx9QC5XywuMRBreKU4ElbLTvMEZqxRHFcw/viewform).
+Fill out the form here: [link to enter the ranks](https://docs.google.com/forms/d/e/1FAIpQLSdoLLgBLfTxZIwKJx9QC5XywuMRBreKU4ElbLTvMEZqxRHFcw/viewform).
 
 ## You want to participate in the state cup?
 Fill out the form here: [link](https://docs.google.com/forms/d/e/1FAIpQLSdqA8dWufte8_KMMjQVvB0JpeQgKIzr1FH1Dk2-MgjFVEZjdw/viewform).
