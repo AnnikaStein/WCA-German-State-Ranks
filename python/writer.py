@@ -11,17 +11,11 @@ import json
 # for multi-sorting by priorities in nested lists
 from operator import itemgetter
 
-# from GCA Discord
+# WCA German State Ranks custom modules
 import info
-
-# make formatting easier / human-readable
-import util
-
 import statecup
 import statecup_info
-
-# to record when the last update happened
-import datetime
+import util
 
 from argparse import ArgumentParser
 
@@ -354,7 +348,6 @@ for k in info.id_state.keys():
 print(f'>> Using {id_count} WCA IDs.')
 
 # interesting info to fill on each page, as the results are time-dependent
-#now = datetime.datetime.now()
 updated = f'{version_m} {version_d}, {version_y}'
 
 def generate_readme():
@@ -362,16 +355,10 @@ def generate_readme():
 [![WCA German State Ranks Automation](https://github.com/AnnikaStein/WCA-German-State-Ranks/actions/workflows/automate.yml/badge.svg)](https://github.com/AnnikaStein/WCA-German-State-Ranks/actions/workflows/automate.yml)
 [![pages-build-deployment](https://github.com/AnnikaStein/WCA-German-State-Ranks/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AnnikaStein/WCA-German-State-Ranks/actions/workflows/pages/pages-build-deployment)
 
-Displaying the PRs of people who have given *explicit consent* (opt-in) to appear in German WCA state rankings. Federal state data taken from the GCA Discord Server (reaction roles), PRs taken from the WCA database via the [unofficial API](https://github.com/robiningelbrecht/wca-rest-api).
+Displaying the PRs of people who have given *explicit consent* (opt-in) to appear in German WCA state rankings. PRs taken from the WCA database via the [unofficial API](https://github.com/robiningelbrecht/wca-rest-api).
 
 ## How to appear in these rankings?
-Variant 1:
-- Join the GCA Discord Server and read + understand the rules.
-- Append your WCA ID to your username (example: Nickname | 2024ABCD42)
-- Click one of the 16 federal state reaction roles.
-
-Variant 2:
-- Fill out the form here: [link to enter the ranks](https://docs.google.com/forms/d/e/1FAIpQLSdoLLgBLfTxZIwKJx9QC5XywuMRBreKU4ElbLTvMEZqxRHFcw/viewform).
+Fill out the form here: [link to enter the ranks](https://docs.google.com/forms/d/e/1FAIpQLSdoLLgBLfTxZIwKJx9QC5XywuMRBreKU4ElbLTvMEZqxRHFcw/viewform).
 
 ## You want to participate in the state cup?
 Fill out the form here: [link](https://docs.google.com/forms/d/e/1FAIpQLSdqA8dWufte8_KMMjQVvB0JpeQgKIzr1FH1Dk2-MgjFVEZjdw/viewform).
@@ -983,9 +970,7 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                 attr(style='text-align: center;height:10rem;clear:both;display:block;')
                 br()
                 h4('How to appear in these rankings?')
-                text('Variant 1: Join the GCA Discord Server and read + understand the rules. Append your WCA ID to your username (example: Nickname | 2024ABCD42). Click one of the 16 federal state reaction roles.')
-                br()
-                text('Variant 2: Fill out the form here:')
+                text('Fill out the form here:')
                 a('link to enter the ranks',
                   href='https://docs.google.com/forms/d/e/1FAIpQLSdoLLgBLfTxZIwKJx9QC5XywuMRBreKU4ElbLTvMEZqxRHFcw/viewform',
                   target='_blank')
