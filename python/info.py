@@ -191,7 +191,8 @@ id_state = {
             '2021MARA01'],
     'th' : ['2016SCHO08',
             '2012KALH01',
-            '2023SOKO04'],
+            '2023SOKO04',
+            '2013LANG02'],
 }
 
 name_state = {
