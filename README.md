@@ -13,7 +13,7 @@ Fill out the form here: [link](https://docs.google.com/forms/d/e/1FAIpQLSdqA8dWu
 ## Data statement
 > This information is based on competition results owned and maintained by the
 > World Cube Assocation, published at https://worldcubeassociation.org/results
-> as of August 31, 2024.
+> as of September 01, 2024.
 
 ## Support
 Enjoy what you see? Feel free to support my projects here: [at my Cuboss-Affiliate page](https://cuboss.com/affiliate/?affiliate=hugacuba&r=hugacuba) and save 5% off your order! Direct donations can be made to: [your developer](https://www.paypal.com/paypalme/hugacuba).
