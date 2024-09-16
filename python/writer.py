@@ -332,12 +332,13 @@ print(overview_DE)
 
 # German State Cup section - calculation externalized to statecup.py
 print('>> Building State Cup Custom Kinch Ranks. This will take a while.')
-statecup_scores, statecup_teams, statecup_mean_scores = statecup.create_state_info(for_testing_only = test_statecup, expect = via_expectation_values)
+statecup_scores, statecup_teams, statecup_mean_scores, statecup_team_scores = statecup.create_state_info(for_testing_only = test_statecup, expect = via_expectation_values)
 if debug:
     print('>> State Cup Custom Kinch Ranks:')
     print(statecup_info)
     print(statecup_teams)
     print(statecup_mean_scores)
+    print(statecup_team_scores)
 
 # to show that we are only using a subset of all available results in German states,
 # i.e. counting how many gave their consent
@@ -450,10 +451,12 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                     scores = statecup_scores[st]
                     team = statecup_teams[st]
                     mean_avg_score = round(statecup_mean_scores[st], 2)
+                    team_score = round(statecup_team_scores[st], 2)
                     long_name = info.name_state[st]
                     h4(long_name)
+                    extra_text_team_score = f', (winning likelihood team score if multiple teams from this state were possible: {team_score})' if team_score > 0 else ''
                     p('Preliminary state cup team (must have stated willing_to_compete):' \
-                    + f' 1. {team[0]}, 2. {team[1]}, 3. {team[2]}')
+                    + f' 1. {team[0]}, 2. {team[1]}, 3. {team[2]}{extra_text_team_score}')
                     h6(f'Current state custom kinch scores, mean of this state (willing_to_compete only): {mean_avg_score}')
                     with div():
                         attr(style = 'overflow-x:auto')

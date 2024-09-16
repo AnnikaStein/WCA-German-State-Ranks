@@ -193,7 +193,7 @@ def get_optimal_team(eligible, event_combis, events = statecup_info.EVENTS_IN_ST
                 print('>> New optimal_i:', i)
                 print('>> New best_expectation_value:', expectation_value)
                 print('>> New best team:', t)
-    return list(possible_teams[optimal_i])
+    return list(possible_teams[optimal_i]), best_expectation_value
 
 # state level
 def create_state_teams(all_states_df, state_order, event_combis, all_registered = False, debug = False, expectation_value_variant = False):
@@ -209,6 +209,7 @@ def create_state_teams(all_states_df, state_order, event_combis, all_registered 
     all_assigned_names = []
     available_names = {k : [] for k in state_ids}
     n_avail_names = {k : 0 for k in state_ids}
+    state_team_scores = {k : 0 for k in state_ids}
 
     if expectation_value_variant:
         # simulate that all possible teams need to do well with all possible event combinations
@@ -218,13 +219,15 @@ def create_state_teams(all_states_df, state_order, event_combis, all_registered 
             state_df = all_states_df[k]
             extra_avail = []
             n_avail = 0
+            state_team_score = 0
             if all_registered:
                 eligible = state_df[state_df['registered_at_comp'] == True]
                 n_in_state = len(eligible.index)
                 take_up_to = min(n_in_state, statecup_info.TEAM_SIZE)
                 if n_in_state > statecup_info.TEAM_SIZE:
                     # preliminary people (involves the simulation)
-                    preliminary_people = get_optimal_team(eligible, event_combis, debug = debug)
+                    preliminary_people, state_team_score = get_optimal_team(eligible, event_combis, debug = debug)
+                    state_team_scores[k] = state_team_score
                     # extra avail
                     extra_avail = eligible[~eligible['name'].isin(preliminary_people)]['name'].tolist()
                     n_avail = len(extra_avail)
@@ -236,7 +239,8 @@ def create_state_teams(all_states_df, state_order, event_combis, all_registered 
                 take_up_to = min(n_in_state, statecup_info.TEAM_SIZE)
                 if n_in_state > statecup_info.TEAM_SIZE:
                     # preliminary people (involves the simulation)
-                    preliminary_people = get_optimal_team(eligible, event_combis, debug = debug)
+                    preliminary_people, state_team_score = get_optimal_team(eligible, event_combis, debug = debug)
+                    state_team_scores[k] = state_team_score
                     # extra avail
                     extra_avail = eligible[~eligible['name'].isin(preliminary_people)]['name'].tolist()
                     n_avail = len(extra_avail)
@@ -244,6 +248,7 @@ def create_state_teams(all_states_df, state_order, event_combis, all_registered 
                     preliminary_people = eligible['name'].head(take_up_to).tolist()
             if debug:
                 print(preliminary_people)
+            print('>> State team score:', state_team_score)
             available_names[k] = extra_avail
             n_avail_names[k] = n_avail
             assigned_names[k] = preliminary_people
@@ -349,7 +354,7 @@ def create_state_teams(all_states_df, state_order, event_combis, all_registered 
         print()
         print('>> all_assigned_names', all_assigned_names)
         print()
-    return assigned_names
+    return assigned_names, state_team_scores
 
 # using all available info and the algorithm
 def create_state_info(for_testing_only = False, deb = False, expect = False):
@@ -395,7 +400,7 @@ def create_state_info(for_testing_only = False, deb = False, expect = False):
     # now build the proposed team composition,
     # from registered (+ willing) competitors
     start = timer()
-    state_teams = create_state_teams(all_states,
+    state_teams, state_team_scores = create_state_teams(all_states,
                                      sorted_states,
                                      possible_event_combinations,
                                      all_registered = for_testing_only,
@@ -404,11 +409,11 @@ def create_state_info(for_testing_only = False, deb = False, expect = False):
 
     end = timer()
     print('>> Elapsed time for team creation:', end - start)
-    return all_states, state_teams, states_by_mean_avg_kinch
+    return all_states, state_teams, states_by_mean_avg_kinch, state_team_scores
 
 if __name__ == "__main__":
     print("Testing statecup functionality independently.")
-    main_func_output_scores, main_func_output_teams, main_func_output_mean_avg_kinch = create_state_info(for_testing_only = True,
-                                                                        deb = True,
-                                                                        expect = True)
+    main_func_output_scores, main_func_output_teams, main_func_output_mean_avg_kinch, main_func_output_team_scores = create_state_info(for_testing_only = True,
+                                                                                                                    deb = True,
+                                                                                                                    expect = True)
     print(main_func_output_scores, '\n\n', main_func_output_teams, '\n\n', main_func_output_mean_avg_kinch)
