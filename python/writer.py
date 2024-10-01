@@ -476,7 +476,10 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                                                             scores['willing_to_compete']):
                                     with tr():
                                         td(av, style = 'text-align: center;')
-                                        td(wc, style = 'text-align: center;')
+                                        if wc == 'Newcomer':
+                                            td(wc, style = 'text-align: center;')
+                                        else:
+                                            td(a(wc, href=f'https://www.worldcubeassociation.org/persons/{wc}'), style = 'text-align: center;')
                                         td(na, style = 'text-align: left;')
                                         td('Yes' if re else 'No', style = 'text-align: center;')
                                         td('Yes' if wi else 'No', style = 'text-align: center;')
