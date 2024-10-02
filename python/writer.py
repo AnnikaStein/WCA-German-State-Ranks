@@ -440,12 +440,19 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                           cls='w3-button w3-round w3-theme-d3link btn-active',
                           style='width: 5.5rem; padding: 0; text-align: center; font-size: 0.7rem')
                 h3('WCA German State Ranks'+title_app)
-                p(f'The state cup is set to draw three out of those events randomly per match: {event_str}.' \
-                + ' These events are used to determine custom national average kinch scores per person, and a mean score per state. A person\'s kinch score is obtained from NR/PR * 100, with 0.0 if no result for the event, 100.0 if German NR-holder.')
-                p('Teams are obtained from: 1. state ranks info / scores, 2. registration data, 3. willingness to compete (with another google form to fill out) in a first pass. This first pass determines the team by optimizing the expected performance in the state cup, simulating all possible teams per state, all event combinations, and all permutations of team members. The three highest ranked (via average_kinch) are not necessarily also optimal via expectation value.' \
-                + ' States with too few eligible members are filled up with honorary cubers from other states.' \
-                + ' For that we use: mean score per state to sort states, combine best with worst and so on (second pass).' \
-                + ' In a third pass, if still not all states have enough members, we add available cubers (first from states with lowest mean custom kinch).')
+                with div():
+                    attr(cls = 'w3-container')
+                    with div():
+                        attr(cls = 'card')
+                        button("Details for Rubik's German Nationals 2024", type = 'button', cls = 'collapsible')
+                        with div():
+                            attr(cls = 'content')
+                            p(f'The state cup is set to draw three out of those events randomly per match: {event_str}.' \
+                            + ' These events are used to determine custom national average kinch scores per person, and a mean score per state. A person\'s kinch score is obtained from NR/PR * 100, with 0.0 if no result for the event, 100.0 if German NR-holder.')
+                            p('Teams are obtained from: 1. state ranks info / scores, 2. registration data, 3. willingness to compete (with another google form to fill out) in a first pass. This first pass determines the team by optimizing the expected performance in the state cup, simulating all possible teams per state, all event combinations, and all permutations of team members. The three highest ranked (via average_kinch) are not necessarily also optimal via expectation value.' \
+                            + ' States with too few eligible members are filled up with honorary cubers from other states.' \
+                            + ' For that we use: mean score per state to sort states, combine best with worst and so on (second pass).' \
+                            + ' In a third pass, if still not all states have enough members, we add available cubers (first from states with lowest mean custom kinch).')
 
                 for st in state_r.keys():
                     scores = statecup_scores[st]
@@ -1054,6 +1061,8 @@ generate_html(variant = 'index', choice = 'all')
 print('>> Writing updated state rank overview to UI.')
 generate_html(variant = 'overview', choice = 'all')
 
+# to be commented out on the afternoon of October 5th, 2024 to preserve
+# the state in which this page was before the first German State Cup
 print('>> Writing statecup info and teams to UI.')
 generate_html(variant = 'state-cup', choice = 'all')
 
