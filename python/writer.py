@@ -453,6 +453,12 @@ def generate_html(variant = 'by-state', choice = 'bw'):
                             + ' States with too few eligible members are filled up with honorary cubers from other states.' \
                             + ' For that we use: mean score per state to sort states, combine best with worst and so on (second pass).' \
                             + ' In a third pass, if still not all states have enough members, we add available cubers (first from states with lowest mean custom kinch).')
+                            p('Presentation (DEUTSCH):')
+                            with a():
+                                attr(href='../assets/pdf/statecupteams.pdf', download='statecupteams.pdf')
+                                with button():
+                                    attr(cls='btn')
+                                    i(cls="fa fa-download")
 
                 for st in state_r.keys():
                     scores = statecup_scores[st]

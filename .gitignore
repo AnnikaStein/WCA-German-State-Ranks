@@ -14,3 +14,4 @@ local
 assets/*
 !assets/event-svg
 !assets/list_ids
+!assets/pdf
