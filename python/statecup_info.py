@@ -18,5 +18,5 @@ with open('../assets/list_ids/statecup_enthusiasts.txt', 'r') as file:
 CUSTOM_NEWCOMERS = {st : [] for st in info.name_state.keys()}
 CUSTOM_NEWCOMERS['bay'] = ['Mika Spielvogel']
 CUSTOM_NEWCOMERS['ber'] = ['Claudio Favino']
-CUSTOM_NEWCOMERS['br'] = ['Emil Krause','Johanna Gerhardt']
+CUSTOM_NEWCOMERS['br'] = ['Emil Krause','Johanna Gerhardt','Leonard Maas']
 CUSTOM_NEWCOMERS['sh'] = ['Gesa Seifert']
