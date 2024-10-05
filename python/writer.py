@@ -1070,8 +1070,8 @@ generate_html(variant = 'overview', choice = 'all')
 
 # to be commented out on the afternoon of October 5th, 2024 to preserve
 # the state in which this page was before the first German State Cup
-#print('>> Writing statecup info and teams to UI.')
-#generate_html(variant = 'state-cup', choice = 'all')
+print('>> Writing statecup info and teams to UI.')
+generate_html(variant = 'state-cup', choice = 'all')
 
 for st in state_r.keys():
     print(f'>> Writing {st} ranks to UI.')
