@@ -1,0 +1,324 @@
+.container {
+    width: 100%;
+    height: 100%;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  th {
+    background-color: #000000;
+    color: white;
+    padding: 0.5rem;
+  }
+  
+  td {
+    padding: 0.5rem;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
+  
+  
+  
+  /* Collabsible borrowed from academic page */
+  .collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  .act, .collapsible:hover {
+    background-color: #555;
+  }
+  
+  .collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .act:after {
+    content: "\2212";
+  }
+  
+  .content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+  }
+  /* End collapsible */
+  
+  
+  
+  .btn-con {
+    margin-top: 0.5rem;
+    width: 57.5rem;
+    z-index: -1;
+  }
+  
+  .butn-con {
+    margin-top: 0.5rem;
+    width: 57.5rem;
+    z-index: -1;
+  }
+  
+  .links-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .links-container a {
+    width: 80%;
+  }
+  
+  .btn {
+    border-radius: 0.1rem;
+    background-color: #cce6ff;
+    border: none; /* Remove borders */
+    height: 2.4rem;
+    width: 2.4rem;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    font-size: 0.7rem;
+  }
+  
+  /* Darker background on mouse-over */
+  .btn:hover {
+    background-color: #00cc66;
+  }
+  
+  .btn-active {
+    background-color: #00cc66;
+  }
+  
+  .ebdSVG {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  .evt-active {
+    display: block;
+  }
+  
+  .evt-hidden {
+    display: none;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 9.8rem;
+    height: 1.5rem;
+  }
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 7.5rem;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.1rem;
+    width: 1.1rem;
+    left: 0.2rem;
+    bottom: 0.2rem;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #00cc66;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(0.8rem);
+    -ms-transform: translateX(0.8rem);
+    transform: translateX(0.8rem);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 1.4rem;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  .toggleSwitch span span {
+      display: none;
+  }
+  
+  .toggleSwitch {
+      display: inline-block;
+      margin-top: 0.4rem;
+      position: relative;
+      overflow: visible;
+      padding: 0;
+      cursor: pointer;
+      width: 12rem;
+      background-color: #fafafa;
+      border: 0px solid #ccc;
+      border-radius:5px;
+      height: 1.7em;
+  }
+  
+  .toggleSwitch * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+  
+  .toggleSwitch label,
+  .toggleSwitch > span {
+      line-height: 1.7rem;
+      height: 1.7rem;
+      vertical-align: middle;
+  }
+  
+  .toggleSwitch input:focus ~ a,
+  .toggleSwitch input:focus + label {
+      outline: none;
+  }
+  
+  .toggleSwitch label {
+      position: relative;
+      z-index: 3;
+      display: block;
+      width: 100%;
+  }
+  
+  .toggleSwitch input {
+      position: absolute;
+      opacity: 0;
+      z-index: 5;
+  }
+  
+  .toggleSwitch > span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      text-align: left;
+      white-space: nowrap;
+      margin:0 0rem;
+  }
+  
+  .toggleSwitch > span span {
+      position: absolute;
+      top: 0;
+      left: 0rem;
+      z-index: 5;
+      display: block;
+      width: 50%;
+      margin-left: 0rem;
+      font-size: 15px;
+      width: auto;
+      opacity: 1;
+      width:50%;
+      text-align: center;
+      line-height:1.7rem;
+  }
+  
+  .toggleSwitch a {
+      position: absolute;
+      right: 50%;
+      z-index: 4;
+      display: block;
+      top: 0rem;
+      bottom: 0rem;
+      padding: 0;
+      left: 0rem;
+      width: 50%;
+      background-color: #00cc66;
+      border-radius: 4px;
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .toggleSwitch > span span:first-of-type {
+      color: #FFF;
+      opacity: 1;
+      left: 0;
+      margin: 0;
+      width: 50%;
+  }
+  
+  .toggleSwitch > span span:last-of-type {
+      left:auto;
+      right:0;
+      color: #999;
+      margin: 0;
+      width: 50%;
+  }
+  
+  .toggleSwitch > span:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 30px;
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+  }
+  
+  .toggleSwitch input:checked ~ a {
+      left: 50%;
+  }
+  
+  .toggleSwitch input:checked ~ span span:first-of-type {
+      left:0;
+      color:#999;
+  }
+  
+  .toggleSwitch input:checked ~ span span:last-of-type {
+      color:#FFF;
+  }
+  
