@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WCA German State Ranks - Hamburg</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+    <link href="https://www.w3schools.com/lib/w3-theme-light-blue.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Content container -->
+    <div class="container">
+      <div style="overflow-x:auto;">
+        <div class="butn-con">
+          <a class="w3-button w3-round w3-theme-d3link navi-btn" href="./overview_all.html" style="width: 5.5rem;padding:0;text-align: center;font-size: 0.7rem">Overview</a>
+          <a class="w3-button w3-round w3-theme-d3link navi-btn" href="./by-state_bw.html" style="width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem">bw</a>
+          <a class="w3-button w3-round w3-theme-d3link navi-btn" href="./by-state_bay.html" style="width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem">bay</a>
+          <a class="w3-button w3-round w3-theme-d3link navi-btn" href="./by-state_ber.html" style="width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem">ber</a>
+          <a class="w3-button w3-round w3-theme-d3link navi-btn" href="./by-state_br.html" style="width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem">br</a>
+          <a class="w3-button w3-round w3-theme-d3link navi-btn" href="./by-state_bre.html" style="width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem">bre</a>
+          <a class="w3-button w3-round w3-theme-d3link btn-active navi-btn" href="./by-state_ham.html" style="width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem">ham</a>
+          <a class="w3-button w3-round w3-theme-d3link navi-btn" href="./by-state_hes.html" style="width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem">hes</a>
+          <a class="w3-button w3-round w3-theme-d3link navi-btn" href="./by-state_mv.html" style="width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem">mv</a>
+          <a class="w3-button w3-round w3-theme-d3link navi-btn" href="./by-state_nie.html" style="width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem">nie</a>
+          <a class="w3-button w3-round w3-theme-d3link navi-btn" href="./by-state_nrw.html" style="width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem">nrw</a>
+          <a class="w3-button w3-round w3-theme-d3link navi-btn" href="./by-state_rlp.html" style="width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem">rlp</a>
+          <a class="w3-button w3-round w3-theme-d3link navi-btn" href="./by-state_saa.html" style="width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem">saa</a>
+          <a class="w3-button w3-round w3-theme-d3link navi-btn" href="./by-state_sn.html" style="width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem">sn</a>
+          <a class="w3-button w3-round w3-theme-d3link navi-btn" href="./by-state_sna.html" style="width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem">sna</a>
+          <a class="w3-button w3-round w3-theme-d3link navi-btn" href="./by-state_sh.html" style="width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem">sh</a>
+          <a class="w3-button w3-round w3-theme-d3link navi-btn" href="./by-state_th.html" style="width: 2.5rem;padding:0;text-align: center;font-size: 0.7rem">th</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./state-cup.html" style="width: 5.5rem; padding: 0; text-align: center; font-size: 0.7rem">State Cup</a>
+        </div>
+      </div>
+      <h3>WCA German State Ranks - Hamburg</h3>
+      <label class="switch">
+        <span>Show Non-DE</span>
+        <input checked="checked" id="nonDEswitch" type="checkbox" value="nonDE">
+        <span class="slider round"></span>
+      </label><br>
+      <div style="overflow-x:auto;">
+        <div class="btn-con">
+          <button class="btn" id="btn-222" onclick="showEvt(evt='222')">
+            <img class="ebdSVG" src="../assets/event-svg/222.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-333bf" onclick="showEvt(evt='333bf')">
+            <img class="ebdSVG" src="../assets/event-svg/333bf.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn btn-active" id="btn-333" onclick="showEvt(evt='333')">
+            <img class="ebdSVG" src="../assets/event-svg/333.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-333fm" onclick="showEvt(evt='333fm')">
+            <img class="ebdSVG" src="../assets/event-svg/333fm.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-333mbf" onclick="showEvt(evt='333mbf')">
+            <img class="ebdSVG" src="../assets/event-svg/333mbf.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-333mbo" onclick="showEvt(evt='333mbo')">
+            <img class="ebdSVG" src="../assets/event-svg/333mbo.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-333oh" onclick="showEvt(evt='333oh')">
+            <img class="ebdSVG" src="../assets/event-svg/333oh.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-333ft" onclick="showEvt(evt='333ft')">
+            <img class="ebdSVG" src="../assets/event-svg/333ft.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-444bf" onclick="showEvt(evt='444bf')">
+            <img class="ebdSVG" src="../assets/event-svg/444bf.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-444" onclick="showEvt(evt='444')">
+            <img class="ebdSVG" src="../assets/event-svg/444.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-555bf" onclick="showEvt(evt='555bf')">
+            <img class="ebdSVG" src="../assets/event-svg/555bf.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-555" onclick="showEvt(evt='555')">
+            <img class="ebdSVG" src="../assets/event-svg/555.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-666" onclick="showEvt(evt='666')">
+            <img class="ebdSVG" src="../assets/event-svg/666.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-777" onclick="showEvt(evt='777')">
+            <img class="ebdSVG" src="../assets/event-svg/777.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-clock" onclick="showEvt(evt='clock')">
+            <img class="ebdSVG" src="../assets/event-svg/clock.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-magic" onclick="showEvt(evt='magic')">
+            <img class="ebdSVG" src="../assets/event-svg/magic.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-mmagic" onclick="showEvt(evt='mmagic')">
+            <img class="ebdSVG" src="../assets/event-svg/mmagic.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-minx" onclick="showEvt(evt='minx')">
+            <img class="ebdSVG" src="../assets/event-svg/minx.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-pyram" onclick="showEvt(evt='pyram')">
+            <img class="ebdSVG" src="../assets/event-svg/pyram.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-skewb" onclick="showEvt(evt='skewb')">
+            <img class="ebdSVG" src="../assets/event-svg/skewb.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+          <button class="btn" id="btn-sq1" onclick="showEvt(evt='sq1')">
+            <img class="ebdSVG" src="../assets/event-svg/sq1.svg" style="height: 1.6rem; width: 1.6rem;">
+          </button>
+        </div>
+      </div>
+      <label class="toggleSwitch nolabel" id="sinAvgLabelPerS" onclick="" style="display:block;">
+        <input id="sinAvgSwitchPerS" type="checkbox" value="single">
+        <a></a>
+        <span>
+          <span class="left-span">Single</span>
+          <span class="right-span">Average</span>
+        </span>
+      </label>
+      <div class="evt-hidden single siav-active sin-222" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Julius Claussen</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023CLAU05">2023CLAU05</a>
+                </td>
+                <td style="text-align: right;">2.07</td>
+                <td style="text-align: right;">6930</td>
+                <td style="text-align: right;">2481</td>
+                <td style="text-align: right;">167</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">3.24</td>
+                <td style="text-align: right;">24793</td>
+                <td style="text-align: right;">7787</td>
+                <td style="text-align: right;">479</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Tuna Kaya Erdal</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2019ERDA01">2019ERDA01</a>
+                </td>
+                <td style="text-align: right;">5.52</td>
+                <td style="text-align: right;">68742</td>
+                <td style="text-align: right;">19443</td>
+                <td style="text-align: right;">1184</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Frederik Hundertmark</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2024HUND01">2024HUND01</a>
+                </td>
+                <td style="text-align: right;">6.21</td>
+                <td style="text-align: right;">80466</td>
+                <td style="text-align: right;">22423</td>
+                <td style="text-align: right;">1375</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-333bf" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">1:27.25</td>
+                <td style="text-align: right;">2020</td>
+                <td style="text-align: right;">707</td>
+                <td style="text-align: right;">62</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-active single siav-active sin-333" style="display:block;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">9.56</td>
+                <td style="text-align: right;">12962</td>
+                <td style="text-align: right;">3497</td>
+                <td style="text-align: right;">257</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Julius Claussen</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023CLAU05">2023CLAU05</a>
+                </td>
+                <td style="text-align: right;">10.08</td>
+                <td style="text-align: right;">16118</td>
+                <td style="text-align: right;">4286</td>
+                <td style="text-align: right;">321</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Tuna Kaya Erdal</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2019ERDA01">2019ERDA01</a>
+                </td>
+                <td style="text-align: right;">11.21</td>
+                <td style="text-align: right;">23967</td>
+                <td style="text-align: right;">6208</td>
+                <td style="text-align: right;">452</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Frederik Hundertmark</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2024HUND01">2024HUND01</a>
+                </td>
+                <td style="text-align: right;">25.63</td>
+                <td style="text-align: right;">124771</td>
+                <td style="text-align: right;">30494</td>
+                <td style="text-align: right;">2022</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-333fm" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-333mbf" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">2/3 22:24</td>
+                <td style="text-align: right;">2915</td>
+                <td style="text-align: right;">1100</td>
+                <td style="text-align: right;">99</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-333mbo" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-333oh" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">20.33</td>
+                <td style="text-align: right;">12269</td>
+                <td style="text-align: right;">3288</td>
+                <td style="text-align: right;">233</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Julius Claussen</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023CLAU05">2023CLAU05</a>
+                </td>
+                <td style="text-align: right;">27.72</td>
+                <td style="text-align: right;">24570</td>
+                <td style="text-align: right;">6396</td>
+                <td style="text-align: right;">443</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Tuna Kaya Erdal</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2019ERDA01">2019ERDA01</a>
+                </td>
+                <td style="text-align: right;">50.76</td>
+                <td style="text-align: right;">47231</td>
+                <td style="text-align: right;">12725</td>
+                <td style="text-align: right;">890</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-333ft" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-444bf" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-444" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">39.59</td>
+                <td style="text-align: right;">6869</td>
+                <td style="text-align: right;">2003</td>
+                <td style="text-align: right;">170</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Julius Claussen</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023CLAU05">2023CLAU05</a>
+                </td>
+                <td style="text-align: right;">1:01.27</td>
+                <td style="text-align: right;">25287</td>
+                <td style="text-align: right;">7113</td>
+                <td style="text-align: right;">576</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Tuna Kaya Erdal</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2019ERDA01">2019ERDA01</a>
+                </td>
+                <td style="text-align: right;">1:12.82</td>
+                <td style="text-align: right;">33662</td>
+                <td style="text-align: right;">9496</td>
+                <td style="text-align: right;">767</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Frederik Hundertmark</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2024HUND01">2024HUND01</a>
+                </td>
+                <td style="text-align: right;">2:59.04</td>
+                <td style="text-align: right;">66791</td>
+                <td style="text-align: right;">20129</td>
+                <td style="text-align: right;">1522</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-555bf" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-555" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">1:03.50</td>
+                <td style="text-align: right;">1864</td>
+                <td style="text-align: right;">568</td>
+                <td style="text-align: right;">58</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Julius Claussen</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023CLAU05">2023CLAU05</a>
+                </td>
+                <td style="text-align: right;">2:13.17</td>
+                <td style="text-align: right;">18573</td>
+                <td style="text-align: right;">5670</td>
+                <td style="text-align: right;">514</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Tuna Kaya Erdal</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2019ERDA01">2019ERDA01</a>
+                </td>
+                <td style="text-align: right;">2:43.94</td>
+                <td style="text-align: right;">23805</td>
+                <td style="text-align: right;">7404</td>
+                <td style="text-align: right;">650</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-666" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">2:28.21</td>
+                <td style="text-align: right;">2890</td>
+                <td style="text-align: right;">870</td>
+                <td style="text-align: right;">88</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-777" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">3:41.40</td>
+                <td style="text-align: right;">2337</td>
+                <td style="text-align: right;">702</td>
+                <td style="text-align: right;">71</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-clock" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Julius Claussen</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023CLAU05">2023CLAU05</a>
+                </td>
+                <td style="text-align: right;">7.34</td>
+                <td style="text-align: right;">2457</td>
+                <td style="text-align: right;">914</td>
+                <td style="text-align: right;">49</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Tuna Kaya Erdal</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2019ERDA01">2019ERDA01</a>
+                </td>
+                <td style="text-align: right;">38.92</td>
+                <td style="text-align: right;">20156</td>
+                <td style="text-align: right;">7058</td>
+                <td style="text-align: right;">454</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-magic" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-mmagic" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-minx" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Julius Claussen</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023CLAU05">2023CLAU05</a>
+                </td>
+                <td style="text-align: right;">1:23.99</td>
+                <td style="text-align: right;">6164</td>
+                <td style="text-align: right;">1842</td>
+                <td style="text-align: right;">130</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">1:36.40</td>
+                <td style="text-align: right;">8375</td>
+                <td style="text-align: right;">2509</td>
+                <td style="text-align: right;">188</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Tuna Kaya Erdal</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2019ERDA01">2019ERDA01</a>
+                </td>
+                <td style="text-align: right;">3:04.27</td>
+                <td style="text-align: right;">20509</td>
+                <td style="text-align: right;">6610</td>
+                <td style="text-align: right;">446</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Frederik Hundertmark</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2024HUND01">2024HUND01</a>
+                </td>
+                <td style="text-align: right;">3:15.22</td>
+                <td style="text-align: right;">21502</td>
+                <td style="text-align: right;">6976</td>
+                <td style="text-align: right;">465</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-pyram" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Julius Claussen</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023CLAU05">2023CLAU05</a>
+                </td>
+                <td style="text-align: right;">3.75</td>
+                <td style="text-align: right;">6329</td>
+                <td style="text-align: right;">2289</td>
+                <td style="text-align: right;">119</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Frederik Hundertmark</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2024HUND01">2024HUND01</a>
+                </td>
+                <td style="text-align: right;">6.59</td>
+                <td style="text-align: right;">25283</td>
+                <td style="text-align: right;">8444</td>
+                <td style="text-align: right;">506</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Tuna Kaya Erdal</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2019ERDA01">2019ERDA01</a>
+                </td>
+                <td style="text-align: right;">9.84</td>
+                <td style="text-align: right;">54318</td>
+                <td style="text-align: right;">16995</td>
+                <td style="text-align: right;">911</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-skewb" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Julius Claussen</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023CLAU05">2023CLAU05</a>
+                </td>
+                <td style="text-align: right;">10.11</td>
+                <td style="text-align: right;">32786</td>
+                <td style="text-align: right;">10557</td>
+                <td style="text-align: right;">557</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Tuna Kaya Erdal</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2019ERDA01">2019ERDA01</a>
+                </td>
+                <td style="text-align: right;">20.61</td>
+                <td style="text-align: right;">54126</td>
+                <td style="text-align: right;">17225</td>
+                <td style="text-align: right;">886</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden single siav-active sin-sq1" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">17.69</td>
+                <td style="text-align: right;">4370</td>
+                <td style="text-align: right;">1445</td>
+                <td style="text-align: right;">86</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-222" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Julius Claussen</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023CLAU05">2023CLAU05</a>
+                </td>
+                <td style="text-align: right;">3.92</td>
+                <td style="text-align: right;">9725</td>
+                <td style="text-align: right;">3144</td>
+                <td style="text-align: right;">195</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">4.70</td>
+                <td style="text-align: right;">19297</td>
+                <td style="text-align: right;">5901</td>
+                <td style="text-align: right;">373</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Tuna Kaya Erdal</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2019ERDA01">2019ERDA01</a>
+                </td>
+                <td style="text-align: right;">6.45</td>
+                <td style="text-align: right;">47928</td>
+                <td style="text-align: right;">13606</td>
+                <td style="text-align: right;">856</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Frederik Hundertmark</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2024HUND01">2024HUND01</a>
+                </td>
+                <td style="text-align: right;">7.58</td>
+                <td style="text-align: right;">65335</td>
+                <td style="text-align: right;">18318</td>
+                <td style="text-align: right;">1139</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-333bf" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">2:11.79</td>
+                <td style="text-align: right;">1588</td>
+                <td style="text-align: right;">599</td>
+                <td style="text-align: right;">59</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-active average siav-hidden avg-333" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">10.98</td>
+                <td style="text-align: right;">9648</td>
+                <td style="text-align: right;">2599</td>
+                <td style="text-align: right;">190</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Tuna Kaya Erdal</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2019ERDA01">2019ERDA01</a>
+                </td>
+                <td style="text-align: right;">13.09</td>
+                <td style="text-align: right;">20986</td>
+                <td style="text-align: right;">5374</td>
+                <td style="text-align: right;">378</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Julius Claussen</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023CLAU05">2023CLAU05</a>
+                </td>
+                <td style="text-align: right;">13.61</td>
+                <td style="text-align: right;">24307</td>
+                <td style="text-align: right;">6226</td>
+                <td style="text-align: right;">446</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Frederik Hundertmark</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2024HUND01">2024HUND01</a>
+                </td>
+                <td style="text-align: right;">30.63</td>
+                <td style="text-align: right;">122640</td>
+                <td style="text-align: right;">29947</td>
+                <td style="text-align: right;">1996</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-333fm" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-333oh" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">23.03</td>
+                <td style="text-align: right;">9409</td>
+                <td style="text-align: right;">2478</td>
+                <td style="text-align: right;">180</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Julius Claussen</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023CLAU05">2023CLAU05</a>
+                </td>
+                <td style="text-align: right;">29.54</td>
+                <td style="text-align: right;">18402</td>
+                <td style="text-align: right;">4709</td>
+                <td style="text-align: right;">332</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-333ft" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-444bf" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-444" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">44.02</td>
+                <td style="text-align: right;">5781</td>
+                <td style="text-align: right;">1628</td>
+                <td style="text-align: right;">139</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Julius Claussen</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023CLAU05">2023CLAU05</a>
+                </td>
+                <td style="text-align: right;">1:06.27</td>
+                <td style="text-align: right;">22458</td>
+                <td style="text-align: right;">6290</td>
+                <td style="text-align: right;">506</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-555bf" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-555" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">1:10.43</td>
+                <td style="text-align: right;">1834</td>
+                <td style="text-align: right;">554</td>
+                <td style="text-align: right;">52</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-666" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">2:30.46</td>
+                <td style="text-align: right;">2378</td>
+                <td style="text-align: right;">711</td>
+                <td style="text-align: right;">73</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-777" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">3:48.93</td>
+                <td style="text-align: right;">2091</td>
+                <td style="text-align: right;">625</td>
+                <td style="text-align: right;">59</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-clock" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Julius Claussen</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023CLAU05">2023CLAU05</a>
+                </td>
+                <td style="text-align: right;">8.78</td>
+                <td style="text-align: right;">2336</td>
+                <td style="text-align: right;">882</td>
+                <td style="text-align: right;">52</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-magic" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-mmagic" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-minx" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Julius Claussen</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023CLAU05">2023CLAU05</a>
+                </td>
+                <td style="text-align: right;">1:31.24</td>
+                <td style="text-align: right;">5610</td>
+                <td style="text-align: right;">1689</td>
+                <td style="text-align: right;">120</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">1:57.95</td>
+                <td style="text-align: right;">9727</td>
+                <td style="text-align: right;">2900</td>
+                <td style="text-align: right;">215</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-pyram" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Julius Claussen</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023CLAU05">2023CLAU05</a>
+                </td>
+                <td style="text-align: right;">5.00</td>
+                <td style="text-align: right;">3472</td>
+                <td style="text-align: right;">1190</td>
+                <td style="text-align: right;">62</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Frederik Hundertmark</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2024HUND01">2024HUND01</a>
+                </td>
+                <td style="text-align: right;">10.62</td>
+                <td style="text-align: right;">29583</td>
+                <td style="text-align: right;">9698</td>
+                <td style="text-align: right;">543</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Tuna Kaya Erdal</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2019ERDA01">2019ERDA01</a>
+                </td>
+                <td style="text-align: right;">14.46</td>
+                <td style="text-align: right;">55990</td>
+                <td style="text-align: right;">17388</td>
+                <td style="text-align: right;">940</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-skewb" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Julius Claussen</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023CLAU05">2023CLAU05</a>
+                </td>
+                <td style="text-align: right;">15.10</td>
+                <td style="text-align: right;">32910</td>
+                <td style="text-align: right;">10486</td>
+                <td style="text-align: right;">546</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Tuna Kaya Erdal</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2019ERDA01">2019ERDA01</a>
+                </td>
+                <td style="text-align: right;">28.42</td>
+                <td style="text-align: right;">52479</td>
+                <td style="text-align: right;">16646</td>
+                <td style="text-align: right;">863</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="evt-hidden average siav-hidden avg-sq1" style="display:none;">
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: center;">WCA Id</th>
+                <th style="text-align: right;">Value</th>
+                <th style="text-align: right;">WR</th>
+                <th style="text-align: right;">CR</th>
+                <th style="text-align: right;">NR</th>
+                <th style="text-align: center;">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bgColRow">
+                <td style="text-align: left;">Anton Schröder</td>
+                <td style="text-align: center;">
+                  <a href="https://www.worldcubeassociation.org/persons/2023SCHR10">2023SCHR10</a>
+                </td>
+                <td style="text-align: right;">26.27</td>
+                <td style="text-align: right;">5095</td>
+                <td style="text-align: right;">1664</td>
+                <td style="text-align: right;">99</td>
+                <td style="text-align: center;">DE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <footer style="text-align: center;height:10rem;clear:both;display:block;"><br>
+        <h4>How to appear in these rankings?</h4>Fill out the form here:
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoLLgBLfTxZIwKJx9QC5XywuMRBreKU4ElbLTvMEZqxRHFcw/viewform" target="_blank">link to enter the ranks</a>.<br>
+        <h4>You want to participate in the state cup?</h4>Fill out the form here:
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqA8dWufte8_KMMjQVvB0JpeQgKIzr1FH1Dk2-MgjFVEZjdw/viewform" target="_blank">link</a>.<br>
+        <h4>Data statement</h4>From 223 WCA IDs.<br>This information is based on competition results owned and maintained by the World Cube Assocation, published at https://worldcubeassociation.org/results as of October 14, 2024.<br>
+        <a href="https://annikastein.github.io/" target="_blank">© Annika Stein, 2024.</a><br>Source code for this project: 
+        <a href="https://github.com/AnnikaStein/WCA-German-State-Ranks" target="_blank"><i class="fab fa-github fa-fw w3-large w3-text-grey"></i></a><br><br>Enjoy what you see? Feel free to support my projects here: 
+        <a href="https://cuboss.com/affiliate/?affiliate=hugacuba&amp;r=hugacuba" target="_blank">at my Cuboss-Affiliate page</a> and save 5% off your order! Direct donations can be made to: 
+        <a href="https://www.paypal.com/paypalme/hugacuba" target="_blank">your developer</a>.<br><br>
+      </footer>
+    </div>
+    <script src="../js/script.js"></script>
+    <script async="async" data-id="101446349" src="//static.getclicky.com/js"></script>
+  </body>
+</html>

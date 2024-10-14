@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WCA German State Ranks - Overview</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+    <link href="https://www.w3schools.com/lib/w3-theme-light-blue.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Content container -->
+    <div class="container">
+      <div style="overflow-x:auto;">
+        <div class="butn-con">
+          <a class="w3-button w3-round w3-theme-d3link btn-active" href="./overview_all.html" style="width: 5.5rem; padding: 0; text-align: center; font-size: 0.7rem">Overview</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./by-state_bw.html" style="width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem">bw</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./by-state_bay.html" style="width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem">bay</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./by-state_ber.html" style="width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem">ber</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./by-state_br.html" style="width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem">br</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./by-state_bre.html" style="width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem">bre</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./by-state_ham.html" style="width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem">ham</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./by-state_hes.html" style="width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem">hes</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./by-state_mv.html" style="width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem">mv</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./by-state_nie.html" style="width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem">nie</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./by-state_nrw.html" style="width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem">nrw</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./by-state_rlp.html" style="width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem">rlp</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./by-state_saa.html" style="width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem">saa</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./by-state_sn.html" style="width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem">sn</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./by-state_sna.html" style="width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem">sna</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./by-state_sh.html" style="width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem">sh</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./by-state_th.html" style="width: 2.5rem; padding: 0; text-align: center; font-size: 0.7rem">th</a>
+          <a class="w3-button w3-round w3-theme-d3link" href="./state-cup.html" style="width: 5.5rem; padding: 0; text-align: center; font-size: 0.7rem">State Cup</a>
+        </div>
+      </div>
+      <h3>WCA German State Ranks - Overview</h3>
+      <label class="switch">
+        <span>Show Non-DE</span>
+        <input checked="checked" id="allReprSwitch" type="checkbox" value="allRepr">
+        <span class="slider round"></span>
+      </label><br>
+      <label class="toggleSwitch nolabel" onclick="">
+        <input id="sinAvgSwitch" type="checkbox" value="single">
+        <a></a>
+        <span>
+          <span class="left-span">Single</span>
+          <span class="right-span">Average</span>
+        </span>
+      </label><br>
+      <div class="deRepr single ov-hidden siav-active" style="overflow-x:auto;display:none;">
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center;">Event</th>
+              <th style="text-align: center;">Federal State</th>
+              <th style="text-align: left;">Name</th>
+              <th style="text-align: center;">WCA Id</th>
+              <th style="text-align: right;">Value</th>
+              <th style="text-align: right;">WR</th>
+              <th style="text-align: right;">CR</th>
+              <th style="text-align: right;">NR</th>
+              <th style="text-align: center;">Country</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/222.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nrw</td>
+              <td style="text-align: left;">Imanuel Leonid Müller</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2022MULL02">2022MULL02</a>
+              </td>
+              <td style="text-align: right;">0.52</td>
+              <td style="text-align: right;">10</td>
+              <td style="text-align: right;">5</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333bf.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">rlp</td>
+              <td style="text-align: left;">Jens Haber</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2018HABE02">2018HABE02</a>
+              </td>
+              <td style="text-align: right;">15.05</td>
+              <td style="text-align: right;">12</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">sna</td>
+              <td style="text-align: left;">Sebastian Weyer</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010WEYE02">2010WEYE02</a>
+              </td>
+              <td style="text-align: right;">4.32</td>
+              <td style="text-align: right;">41</td>
+              <td style="text-align: right;">5</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333fm.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bay</td>
+              <td style="text-align: left;">Jeremy Mrzyglocki</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2019MRZY01">2019MRZY01</a>
+              </td>
+              <td style="text-align: right;">19</td>
+              <td style="text-align: right;">24</td>
+              <td style="text-align: right;">8</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333mbf.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">hes</td>
+              <td style="text-align: left;">Jonathan Blöcher</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2018BLOC01">2018BLOC01</a>
+              </td>
+              <td style="text-align: right;">30/30 58:03</td>
+              <td style="text-align: right;">43</td>
+              <td style="text-align: right;">20</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333oh.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bay</td>
+              <td style="text-align: left;">Jonas Pilhöfer</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2019PILH01">2019PILH01</a>
+              </td>
+              <td style="text-align: right;">6.84</td>
+              <td style="text-align: right;">16</td>
+              <td style="text-align: right;">6</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333ft.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Henri Gerber</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2014GERB01">2014GERB01</a>
+              </td>
+              <td style="text-align: right;">18.55</td>
+              <td style="text-align: right;">4</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/444bf.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bay</td>
+              <td style="text-align: left;">Oliver Fritz</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2014FRIT02">2014FRIT02</a>
+              </td>
+              <td style="text-align: right;">1:52.18</td>
+              <td style="text-align: right;">29</td>
+              <td style="text-align: right;">15</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/444.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">sna</td>
+              <td style="text-align: left;">Sebastian Weyer</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010WEYE02">2010WEYE02</a>
+              </td>
+              <td style="text-align: right;">17.13</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/555bf.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bay</td>
+              <td style="text-align: left;">Oliver Fritz</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2014FRIT02">2014FRIT02</a>
+              </td>
+              <td style="text-align: right;">4:54.37</td>
+              <td style="text-align: right;">28</td>
+              <td style="text-align: right;">13</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/555.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">sna</td>
+              <td style="text-align: left;">Sebastian Weyer</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010WEYE02">2010WEYE02</a>
+              </td>
+              <td style="text-align: right;">39.16</td>
+              <td style="text-align: right;">16</td>
+              <td style="text-align: right;">5</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/666.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">hes</td>
+              <td style="text-align: left;">Kevin Gerhardt</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2013GERH01">2013GERH01</a>
+              </td>
+              <td style="text-align: right;">1:12.93</td>
+              <td style="text-align: right;">16</td>
+              <td style="text-align: right;">4</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/777.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">rlp</td>
+              <td style="text-align: left;">Mark Zimmermann</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2018ZIMM02">2018ZIMM02</a>
+              </td>
+              <td style="text-align: right;">1:59.60</td>
+              <td style="text-align: right;">38</td>
+              <td style="text-align: right;">6</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/clock.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Magnus Lensch</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2019LENS01">2019LENS01</a>
+              </td>
+              <td style="text-align: right;">2.57</td>
+              <td style="text-align: right;">17</td>
+              <td style="text-align: right;">8</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/magic.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nrw</td>
+              <td style="text-align: left;">Jan Bentlage</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010BENT01">2010BENT01</a>
+              </td>
+              <td style="text-align: right;">1.18</td>
+              <td style="text-align: right;">511</td>
+              <td style="text-align: right;">123</td>
+              <td style="text-align: right;">15</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/mmagic.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nrw</td>
+              <td style="text-align: left;">Jan Bentlage</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010BENT01">2010BENT01</a>
+              </td>
+              <td style="text-align: right;">2.83</td>
+              <td style="text-align: right;">295</td>
+              <td style="text-align: right;">91</td>
+              <td style="text-align: right;">17</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/minx.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Henri Gerber</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2014GERB01">2014GERB01</a>
+              </td>
+              <td style="text-align: right;">29.29</td>
+              <td style="text-align: right;">26</td>
+              <td style="text-align: right;">9</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/pyram.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Patrick Bolte</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2022BOLT03">2022BOLT03</a>
+              </td>
+              <td style="text-align: right;">1.44</td>
+              <td style="text-align: right;">248</td>
+              <td style="text-align: right;">96</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/skewb.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bay</td>
+              <td style="text-align: left;">Oliver Fritz</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2014FRIT02">2014FRIT02</a>
+              </td>
+              <td style="text-align: right;">1.18</td>
+              <td style="text-align: right;">39</td>
+              <td style="text-align: right;">22</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/sq1.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bw</td>
+              <td style="text-align: left;">Alexander Botz</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2013BOTZ01">2013BOTZ01</a>
+              </td>
+              <td style="text-align: right;">6.21</td>
+              <td style="text-align: right;">146</td>
+              <td style="text-align: right;">40</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="deRepr average ov-hidden siav-hidden" style="overflow-x:auto;display:none;">
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center;">Event</th>
+              <th style="text-align: center;">Federal State</th>
+              <th style="text-align: left;">Name</th>
+              <th style="text-align: center;">WCA Id</th>
+              <th style="text-align: right;">Value</th>
+              <th style="text-align: right;">WR</th>
+              <th style="text-align: right;">CR</th>
+              <th style="text-align: right;">NR</th>
+              <th style="text-align: center;">Country</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/222.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">hes</td>
+              <td style="text-align: left;">Kevin Gerhardt</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2013GERH01">2013GERH01</a>
+              </td>
+              <td style="text-align: right;">1.34</td>
+              <td style="text-align: right;">50</td>
+              <td style="text-align: right;">23</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333bf.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">rlp</td>
+              <td style="text-align: left;">Jens Haber</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2018HABE02">2018HABE02</a>
+              </td>
+              <td style="text-align: right;">18.27</td>
+              <td style="text-align: right;">14</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">sna</td>
+              <td style="text-align: left;">Sebastian Weyer</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010WEYE02">2010WEYE02</a>
+              </td>
+              <td style="text-align: right;">6.07</td>
+              <td style="text-align: right;">75</td>
+              <td style="text-align: right;">15</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333fm.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nrw</td>
+              <td style="text-align: left;">Jan Bentlage</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010BENT01">2010BENT01</a>
+              </td>
+              <td style="text-align: right;">21.00</td>
+              <td style="text-align: right;">4</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333oh.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Magnus Lensch</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2019LENS01">2019LENS01</a>
+              </td>
+              <td style="text-align: right;">8.67</td>
+              <td style="text-align: right;">7</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333ft.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Henri Gerber</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2014GERB01">2014GERB01</a>
+              </td>
+              <td style="text-align: right;">26.51</td>
+              <td style="text-align: right;">7</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/444bf.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bay</td>
+              <td style="text-align: left;">Oliver Fritz</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2014FRIT02">2014FRIT02</a>
+              </td>
+              <td style="text-align: right;">2:27.70</td>
+              <td style="text-align: right;">24</td>
+              <td style="text-align: right;">12</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/444.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">sna</td>
+              <td style="text-align: left;">Sebastian Weyer</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010WEYE02">2010WEYE02</a>
+              </td>
+              <td style="text-align: right;">19.90</td>
+              <td style="text-align: right;">3</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/555bf.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bay</td>
+              <td style="text-align: left;">Noah Kraft</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2016KRAF01">2016KRAF01</a>
+              </td>
+              <td style="text-align: right;">9:12.22</td>
+              <td style="text-align: right;">38</td>
+              <td style="text-align: right;">16</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/555.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">sna</td>
+              <td style="text-align: left;">Sebastian Weyer</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010WEYE02">2010WEYE02</a>
+              </td>
+              <td style="text-align: right;">42.67</td>
+              <td style="text-align: right;">13</td>
+              <td style="text-align: right;">4</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/666.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">rlp</td>
+              <td style="text-align: left;">Mark Zimmermann</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2018ZIMM02">2018ZIMM02</a>
+              </td>
+              <td style="text-align: right;">1:21.36</td>
+              <td style="text-align: right;">20</td>
+              <td style="text-align: right;">5</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/777.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">rlp</td>
+              <td style="text-align: left;">Mark Zimmermann</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2018ZIMM02">2018ZIMM02</a>
+              </td>
+              <td style="text-align: right;">2:05.14</td>
+              <td style="text-align: right;">24</td>
+              <td style="text-align: right;">5</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/clock.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Magnus Lensch</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2019LENS01">2019LENS01</a>
+              </td>
+              <td style="text-align: right;">3.96</td>
+              <td style="text-align: right;">87</td>
+              <td style="text-align: right;">38</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/magic.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nrw</td>
+              <td style="text-align: left;">Jan Bentlage</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010BENT01">2010BENT01</a>
+              </td>
+              <td style="text-align: right;">1.34</td>
+              <td style="text-align: right;">362</td>
+              <td style="text-align: right;">95</td>
+              <td style="text-align: right;">13</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/mmagic.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nrw</td>
+              <td style="text-align: left;">Jan Bentlage</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010BENT01">2010BENT01</a>
+              </td>
+              <td style="text-align: right;">3.04</td>
+              <td style="text-align: right;">184</td>
+              <td style="text-align: right;">59</td>
+              <td style="text-align: right;">10</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/minx.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Henri Gerber</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2014GERB01">2014GERB01</a>
+              </td>
+              <td style="text-align: right;">33.86</td>
+              <td style="text-align: right;">27</td>
+              <td style="text-align: right;">8</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/pyram.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Duc Huynh</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010HUYN02">2010HUYN02</a>
+              </td>
+              <td style="text-align: right;">2.30</td>
+              <td style="text-align: right;">154</td>
+              <td style="text-align: right;">52</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/skewb.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">hes</td>
+              <td style="text-align: left;">Kevin Gerhardt</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2013GERH01">2013GERH01</a>
+              </td>
+              <td style="text-align: right;">2.30</td>
+              <td style="text-align: right;">46</td>
+              <td style="text-align: right;">25</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/sq1.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Hannes Müller</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2018MULL07">2018MULL07</a>
+              </td>
+              <td style="text-align: right;">8.26</td>
+              <td style="text-align: right;">119</td>
+              <td style="text-align: right;">35</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="allRepr single ov-active siav-active" style="overflow-x:auto;display:block;">
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center;">Event</th>
+              <th style="text-align: center;">Federal State</th>
+              <th style="text-align: left;">Name</th>
+              <th style="text-align: center;">WCA Id</th>
+              <th style="text-align: right;">Value</th>
+              <th style="text-align: right;">WR</th>
+              <th style="text-align: right;">CR</th>
+              <th style="text-align: right;">NR</th>
+              <th style="text-align: center;">Country</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/222.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nrw</td>
+              <td style="text-align: left;">Imanuel Leonid Müller</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2022MULL02">2022MULL02</a>
+              </td>
+              <td style="text-align: right;">0.52</td>
+              <td style="text-align: right;">10</td>
+              <td style="text-align: right;">5</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333bf.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">rlp</td>
+              <td style="text-align: left;">Jens Haber</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2018HABE02">2018HABE02</a>
+              </td>
+              <td style="text-align: right;">15.05</td>
+              <td style="text-align: right;">12</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">sna</td>
+              <td style="text-align: left;">Sebastian Weyer</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010WEYE02">2010WEYE02</a>
+              </td>
+              <td style="text-align: right;">4.32</td>
+              <td style="text-align: right;">41</td>
+              <td style="text-align: right;">5</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="2" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333fm.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bay</td>
+              <td style="text-align: left;">Jeremy Mrzyglocki</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2019MRZY01">2019MRZY01</a>
+              </td>
+              <td style="text-align: right;">19</td>
+              <td style="text-align: right;">24</td>
+              <td style="text-align: right;">8</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">sh</td>
+              <td style="text-align: left;">Fabio Schwandt</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2014SCHW02">2014SCHW02</a>
+              </td>
+              <td style="text-align: right;">19</td>
+              <td style="text-align: right;">24</td>
+              <td style="text-align: right;">8</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: center;">GB</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333mbf.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">hes</td>
+              <td style="text-align: left;">Jonathan Blöcher</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2018BLOC01">2018BLOC01</a>
+              </td>
+              <td style="text-align: right;">30/30 58:03</td>
+              <td style="text-align: right;">43</td>
+              <td style="text-align: right;">20</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333oh.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bay</td>
+              <td style="text-align: left;">Jonas Pilhöfer</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2019PILH01">2019PILH01</a>
+              </td>
+              <td style="text-align: right;">6.84</td>
+              <td style="text-align: right;">16</td>
+              <td style="text-align: right;">6</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333ft.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Henri Gerber</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2014GERB01">2014GERB01</a>
+              </td>
+              <td style="text-align: right;">18.55</td>
+              <td style="text-align: right;">4</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/444bf.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bay</td>
+              <td style="text-align: left;">Oliver Fritz</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2014FRIT02">2014FRIT02</a>
+              </td>
+              <td style="text-align: right;">1:52.18</td>
+              <td style="text-align: right;">29</td>
+              <td style="text-align: right;">15</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/444.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">sna</td>
+              <td style="text-align: left;">Sebastian Weyer</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010WEYE02">2010WEYE02</a>
+              </td>
+              <td style="text-align: right;">17.13</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/555bf.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bay</td>
+              <td style="text-align: left;">Oliver Fritz</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2014FRIT02">2014FRIT02</a>
+              </td>
+              <td style="text-align: right;">4:54.37</td>
+              <td style="text-align: right;">28</td>
+              <td style="text-align: right;">13</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/555.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">sna</td>
+              <td style="text-align: left;">Sebastian Weyer</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010WEYE02">2010WEYE02</a>
+              </td>
+              <td style="text-align: right;">39.16</td>
+              <td style="text-align: right;">16</td>
+              <td style="text-align: right;">5</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/666.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">hes</td>
+              <td style="text-align: left;">Kevin Gerhardt</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2013GERH01">2013GERH01</a>
+              </td>
+              <td style="text-align: right;">1:12.93</td>
+              <td style="text-align: right;">16</td>
+              <td style="text-align: right;">4</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/777.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">rlp</td>
+              <td style="text-align: left;">Mark Zimmermann</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2018ZIMM02">2018ZIMM02</a>
+              </td>
+              <td style="text-align: right;">1:59.60</td>
+              <td style="text-align: right;">38</td>
+              <td style="text-align: right;">6</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/clock.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Magnus Lensch</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2019LENS01">2019LENS01</a>
+              </td>
+              <td style="text-align: right;">2.57</td>
+              <td style="text-align: right;">17</td>
+              <td style="text-align: right;">8</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/magic.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nrw</td>
+              <td style="text-align: left;">Jan Bentlage</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010BENT01">2010BENT01</a>
+              </td>
+              <td style="text-align: right;">1.18</td>
+              <td style="text-align: right;">511</td>
+              <td style="text-align: right;">123</td>
+              <td style="text-align: right;">15</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/mmagic.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nrw</td>
+              <td style="text-align: left;">Jan Bentlage</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010BENT01">2010BENT01</a>
+              </td>
+              <td style="text-align: right;">2.83</td>
+              <td style="text-align: right;">295</td>
+              <td style="text-align: right;">91</td>
+              <td style="text-align: right;">17</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/minx.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Henri Gerber</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2014GERB01">2014GERB01</a>
+              </td>
+              <td style="text-align: right;">29.29</td>
+              <td style="text-align: right;">26</td>
+              <td style="text-align: right;">9</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/pyram.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bay</td>
+              <td style="text-align: left;">Alwin Rölz</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2016ROLZ01">2016ROLZ01</a>
+              </td>
+              <td style="text-align: right;">1.05</td>
+              <td style="text-align: right;">32</td>
+              <td style="text-align: right;">15</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">CH</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/skewb.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bay</td>
+              <td style="text-align: left;">Oliver Fritz</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2014FRIT02">2014FRIT02</a>
+              </td>
+              <td style="text-align: right;">1.18</td>
+              <td style="text-align: right;">39</td>
+              <td style="text-align: right;">22</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/sq1.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bw</td>
+              <td style="text-align: left;">Alexander Botz</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2013BOTZ01">2013BOTZ01</a>
+              </td>
+              <td style="text-align: right;">6.21</td>
+              <td style="text-align: right;">146</td>
+              <td style="text-align: right;">40</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="allRepr average ov-active siav-hidden" style="overflow-x:auto;display:none;">
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center;">Event</th>
+              <th style="text-align: center;">Federal State</th>
+              <th style="text-align: left;">Name</th>
+              <th style="text-align: center;">WCA Id</th>
+              <th style="text-align: right;">Value</th>
+              <th style="text-align: right;">WR</th>
+              <th style="text-align: right;">CR</th>
+              <th style="text-align: right;">NR</th>
+              <th style="text-align: center;">Country</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/222.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">hes</td>
+              <td style="text-align: left;">Kevin Gerhardt</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2013GERH01">2013GERH01</a>
+              </td>
+              <td style="text-align: right;">1.34</td>
+              <td style="text-align: right;">50</td>
+              <td style="text-align: right;">23</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333bf.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">rlp</td>
+              <td style="text-align: left;">Jens Haber</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2018HABE02">2018HABE02</a>
+              </td>
+              <td style="text-align: right;">18.27</td>
+              <td style="text-align: right;">14</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">sna</td>
+              <td style="text-align: left;">Sebastian Weyer</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010WEYE02">2010WEYE02</a>
+              </td>
+              <td style="text-align: right;">6.07</td>
+              <td style="text-align: right;">75</td>
+              <td style="text-align: right;">15</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333fm.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nrw</td>
+              <td style="text-align: left;">Jan Bentlage</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010BENT01">2010BENT01</a>
+              </td>
+              <td style="text-align: right;">21.00</td>
+              <td style="text-align: right;">4</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333oh.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Magnus Lensch</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2019LENS01">2019LENS01</a>
+              </td>
+              <td style="text-align: right;">8.67</td>
+              <td style="text-align: right;">7</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/333ft.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Henri Gerber</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2014GERB01">2014GERB01</a>
+              </td>
+              <td style="text-align: right;">26.51</td>
+              <td style="text-align: right;">7</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/444bf.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bay</td>
+              <td style="text-align: left;">Oliver Fritz</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2014FRIT02">2014FRIT02</a>
+              </td>
+              <td style="text-align: right;">2:27.70</td>
+              <td style="text-align: right;">24</td>
+              <td style="text-align: right;">12</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/444.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">sna</td>
+              <td style="text-align: left;">Sebastian Weyer</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010WEYE02">2010WEYE02</a>
+              </td>
+              <td style="text-align: right;">19.90</td>
+              <td style="text-align: right;">3</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/555bf.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bay</td>
+              <td style="text-align: left;">Noah Kraft</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2016KRAF01">2016KRAF01</a>
+              </td>
+              <td style="text-align: right;">9:12.22</td>
+              <td style="text-align: right;">38</td>
+              <td style="text-align: right;">16</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/555.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">sna</td>
+              <td style="text-align: left;">Sebastian Weyer</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010WEYE02">2010WEYE02</a>
+              </td>
+              <td style="text-align: right;">42.67</td>
+              <td style="text-align: right;">13</td>
+              <td style="text-align: right;">4</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/666.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">rlp</td>
+              <td style="text-align: left;">Mark Zimmermann</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2018ZIMM02">2018ZIMM02</a>
+              </td>
+              <td style="text-align: right;">1:21.36</td>
+              <td style="text-align: right;">20</td>
+              <td style="text-align: right;">5</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/777.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">rlp</td>
+              <td style="text-align: left;">Mark Zimmermann</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2018ZIMM02">2018ZIMM02</a>
+              </td>
+              <td style="text-align: right;">2:05.14</td>
+              <td style="text-align: right;">24</td>
+              <td style="text-align: right;">5</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/clock.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Magnus Lensch</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2019LENS01">2019LENS01</a>
+              </td>
+              <td style="text-align: right;">3.96</td>
+              <td style="text-align: right;">87</td>
+              <td style="text-align: right;">38</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/magic.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nrw</td>
+              <td style="text-align: left;">Jan Bentlage</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010BENT01">2010BENT01</a>
+              </td>
+              <td style="text-align: right;">1.34</td>
+              <td style="text-align: right;">362</td>
+              <td style="text-align: right;">95</td>
+              <td style="text-align: right;">13</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/mmagic.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nrw</td>
+              <td style="text-align: left;">Jan Bentlage</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2010BENT01">2010BENT01</a>
+              </td>
+              <td style="text-align: right;">3.04</td>
+              <td style="text-align: right;">184</td>
+              <td style="text-align: right;">59</td>
+              <td style="text-align: right;">10</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/minx.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Henri Gerber</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2014GERB01">2014GERB01</a>
+              </td>
+              <td style="text-align: right;">33.86</td>
+              <td style="text-align: right;">27</td>
+              <td style="text-align: right;">8</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/pyram.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">bay</td>
+              <td style="text-align: left;">Alwin Rölz</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2016ROLZ01">2016ROLZ01</a>
+              </td>
+              <td style="text-align: right;">2.22</td>
+              <td style="text-align: right;">133</td>
+              <td style="text-align: right;">48</td>
+              <td style="text-align: right;">2</td>
+              <td style="text-align: center;">CH</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/skewb.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">hes</td>
+              <td style="text-align: left;">Kevin Gerhardt</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2013GERH01">2013GERH01</a>
+              </td>
+              <td style="text-align: right;">2.30</td>
+              <td style="text-align: right;">46</td>
+              <td style="text-align: right;">25</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+            <tr>
+              <td rowspan="1" style="text-align: center; position: relative;">
+                <img src="../assets/event-svg/sq1.svg" style="text-align: center; height: 1.6rem; width: 1.6rem;">
+              </td>
+              <td style="text-align: center;">nie</td>
+              <td style="text-align: left;">Hannes Müller</td>
+              <td style="text-align: center;">
+                <a href="https://www.worldcubeassociation.org/persons/2018MULL07">2018MULL07</a>
+              </td>
+              <td style="text-align: right;">8.26</td>
+              <td style="text-align: right;">119</td>
+              <td style="text-align: right;">35</td>
+              <td style="text-align: right;">1</td>
+              <td style="text-align: center;">DE</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="container">
+      <footer style="text-align: center;height:10rem;clear:both;display:block;"><br>
+        <h4>How to appear in these rankings?</h4>Fill out the form here:
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoLLgBLfTxZIwKJx9QC5XywuMRBreKU4ElbLTvMEZqxRHFcw/viewform" target="_blank">link to enter the ranks</a>.<br>
+        <h4>You want to participate in the state cup?</h4>Fill out the form here:
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqA8dWufte8_KMMjQVvB0JpeQgKIzr1FH1Dk2-MgjFVEZjdw/viewform" target="_blank">link</a>.<br>
+        <h4>Data statement</h4>From 223 WCA IDs.<br>This information is based on competition results owned and maintained by the World Cube Assocation, published at https://worldcubeassociation.org/results as of October 14, 2024.<br>
+        <a href="https://annikastein.github.io/" target="_blank">© Annika Stein, 2024.</a><br>Source code for this project: 
+        <a href="https://github.com/AnnikaStein/WCA-German-State-Ranks" target="_blank"><i class="fab fa-github fa-fw w3-large w3-text-grey"></i></a><br><br>Enjoy what you see? Feel free to support my projects here: 
+        <a href="https://cuboss.com/affiliate/?affiliate=hugacuba&amp;r=hugacuba" target="_blank">at my Cuboss-Affiliate page</a> and save 5% off your order! Direct donations can be made to: 
+        <a href="https://www.paypal.com/paypalme/hugacuba" target="_blank">your developer</a>.<br><br>
+      </footer>
+    </div>
+    <script src="../js/script.js"></script>
+    <script async="async" data-id="101446349" src="//static.getclicky.com/js"></script>
+  </body>
+</html>
