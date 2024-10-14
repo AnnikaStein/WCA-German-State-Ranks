@@ -1,5 +1,4 @@
 # WCA German State Ranks
-[![WCA German State Ranks Automation](https://github.com/AnnikaStein/WCA-German-State-Ranks/actions/workflows/automate.yml/badge.svg)](https://github.com/AnnikaStein/WCA-German-State-Ranks/actions/workflows/automate.yml)
 [![pages-build-deployment](https://github.com/AnnikaStein/WCA-German-State-Ranks/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AnnikaStein/WCA-German-State-Ranks/actions/workflows/pages/pages-build-deployment)
 
 Displaying the PRs of people who have given *explicit consent* (opt-in) to appear in German WCA state rankings. PRs taken from the WCA database via the [unofficial API](https://github.com/robiningelbrecht/wca-rest-api).
@@ -12,7 +11,7 @@ Fill out the form here: [link](https://docs.google.com/forms/d/e/1FAIpQLSdqA8dWu
 
 ## Data statement
 > This information is based on competition results owned and maintained by the
-> World Cube Assocation, published at https://worldcubeassociation.org/results
+> World Cube Association, published at https://worldcubeassociation.org/results
 > as of October 14, 2024.
 
 ## Support
